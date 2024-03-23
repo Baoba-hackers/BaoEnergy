@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.5;
+pragma solidity >=0.8.2;
 
-contract BaoTrack {
+contract BaoTrackL2 {
     struct Transaction {
         uint256 productId;
         uint256 amount;
