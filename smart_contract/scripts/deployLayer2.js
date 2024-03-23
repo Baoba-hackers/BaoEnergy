@@ -1,6 +1,16 @@
 const {ethers} = require("hardhat");
 const fs = require("fs");
 
+
+async function getAbi(){
+  const artifactPath = "artifacts/contracts/BaoPrices.sol/BaoPrices.json";
+  const artifact = JSON.parse(fs.readFileSync(artifactPath, "utf-8"));
+  console.log(artifact);
+  return artifact.abi;
+}
+
+
+
 async function main(){
     const [deployer] = await ethers.getSigners();
     console.log("Deploying contracts with the account:", deployer.address);
@@ -20,6 +30,14 @@ async function main(){
 
     //Escreva no config.json
     fs.writeFileSync('config.json', newData);
+
+    //pega a abi
+    const jsonData = await getAbi();
+    
+    fs.writeFileSync('../backend/abi.json', JSON.stringify({"abi":jsonData, "address": bao.target}));
+
+
+
 }
 
 main()

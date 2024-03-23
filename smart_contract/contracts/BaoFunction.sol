@@ -3,7 +3,6 @@ pragma solidity ^0.8.19;
 
 import {FunctionsClient} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/FunctionsClient.sol";
 import {FunctionsRequest} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/libraries/FunctionsRequest.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract BaoFunction is FunctionsClient {
     using FunctionsRequest for FunctionsRequest.Request;
@@ -71,53 +70,53 @@ contract BaoFunction is FunctionsClient {
         subscriptionId = functionsSubscriptionId;      
     }
 
-    function getAllMeanPrice(
-        uint256 _localId
-    ) external returns (bytes32) {
-        UserContract[] memory localsStruct = localToContract[_localId];
-        string[] memory contracts;
-        for(uint256 i = 0; i < localsStruct.length; i++) {
-            contracts[i] = 
-            concatenateStrings(
-                concatenateStrings(
-                    concatenateStrings(
-                        concatenateStrings(
-                            concatenateStrings(
-                                concatenateStrings(
-                                    Strings.toHexString(localsStruct[i].consumer), 
-                                    Strings.toString(localsStruct[i].energyConsume)), 
-                                Strings.toString(localsStruct[i].pricePerMonth)), 
-                            Strings.toString(localsStruct[i].timeStamp)),
-                        Strings.toString(localsStruct[i].localId)),
-                    (localsStruct[i].active ? "true" : "false")), 
+    // function getAllMeanPrice(
+    //     uint256 _localId
+    // ) external returns (bytes32) {
+    //     UserContract[] memory localsStruct = localToContract[_localId];
+    //     string[] memory contracts;
+    //     // for(uint256 i = 0; i < localsStruct.length; i++) {
+    //     //     contracts[i] = 
+    //     //     concatenateStrings(
+    //     //         concatenateStrings(
+    //     //             concatenateStrings(
+    //     //                 concatenateStrings(
+    //     //                     concatenateStrings(
+    //     //                         concatenateStrings(
+    //     //                             Strings.toHexString(localsStruct[i].consumer), 
+    //     //                             Strings.toString(localsStruct[i].energyConsume)), 
+    //     //                         Strings.toString(localsStruct[i].pricePerMonth)), 
+    //     //                     Strings.toString(localsStruct[i].timeStamp)),
+    //     //                 Strings.toString(localsStruct[i].localId)),
+    //     //             (localsStruct[i].active ? "true" : "false")), 
 
-            Strings.toString(localsStruct[i].contractDeadLine));
-        }
+    //     //     Strings.toString(localsStruct[i].contractDeadLine));
+    //     // }
 
-        string[] memory args = new string[](1);
+    //     string[] memory args = new string[](1);
 
-        FunctionsRequest.Request memory req;
-        req.initializeRequestForInlineJavaScript(source); // Initialize the request with JS code
-        if (args.length > 0) req.setArgs(contracts); // Set the arguments for the request
+    //     FunctionsRequest.Request memory req;
+    //     req.initializeRequestForInlineJavaScript(source); // Initialize the request with JS code
+    //     if (args.length > 0) req.setArgs(contracts); // Set the arguments for the request
 
-        // Send the request and store the request ID
-        lastRequestId = _sendRequest(
-            req.encodeCBOR(),
-            subscriptionId,
-            gasLimit,
-            donID
-        );
+    //     // Send the request and store the request ID
+    //     lastRequestId = _sendRequest(
+    //         req.encodeCBOR(),
+    //         subscriptionId,
+    //         gasLimit,
+    //         donID
+    //     );
 
-        requests[lastRequestId] = RequestStatus({
-            exists: true,
-            fulfilled: false,
-            response: "",
-            err: ""
-        });
-        requestIds.push(lastRequestId);
+    //     requests[lastRequestId] = RequestStatus({
+    //         exists: true,
+    //         fulfilled: false,
+    //         response: "",
+    //         err: ""
+    //     });
+    //     requestIds.push(lastRequestId);
 
-        return lastRequestId; 
-    }
+    //     return lastRequestId; 
+    // }
 
     // Receive the weather in the city requested
     function fulfillRequest(

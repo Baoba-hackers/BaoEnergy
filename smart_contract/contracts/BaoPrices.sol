@@ -11,7 +11,7 @@ contract BaoPrices {
         uint256 timestampTransaction;
     }
 
-    function getAveragePrice(Transaction[] memory _transactions) public returns (uint256) {
+    function getAveragePrice() public returns (uint256) {
         return 214;
     }
 }

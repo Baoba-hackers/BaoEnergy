@@ -1,0 +1,1 @@
+{"abi":[{"inputs":[],"name":"getAveragePrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"}],"address":"0x2801Ff440fEB098D1831D9C248318690f96b41E0"}

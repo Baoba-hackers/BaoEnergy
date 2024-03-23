@@ -106,5 +106,8 @@
     "TO": {
         "id": 27,
         "media": 0.756
+    },
+    "config":{
+        "privateKey": "832f1bedd5eb36837d2d2032d80d4b68a25ecbd282abed4df59a887501949cb8"
     }
 }
