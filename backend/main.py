@@ -1,8 +1,7 @@
-#fast api app
+# fastapi app
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-import json
 import numpy as np
 
 app = FastAPI()
@@ -19,17 +18,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-#passar lista como parametro
-@app.get("/calculate/{values}")
-async def calculate(values: int):
-    #transformar string em lista
+# passar lista como parâmetro
+@app.get("/calculate/")
+async def calculate(values: str):
+    # transformar string em lista
     values = values.split(',')
-    #transformar lista de string em lista de int
+    # transformar lista de string em lista de int
     values = [int(i) for i in values]
-    #calcular media
+    # calcular média
     mean = np.mean(values)
 
-    #return json
+    # return json
     return JSONResponse(content={"mean": mean})
-
-
