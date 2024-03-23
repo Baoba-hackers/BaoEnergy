@@ -1,0 +1,38 @@
+.content {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .user {
+        width: 30%;
+        height: 70vh;
+
+        padding: 1rem;
+        :hover {
+            background: #5901fc;
+        }
+
+        Image{
+            margin: auto;
+            width: 30%;
+        }
+
+        border: .7px solid #27A6DB;
+        padding: 2rem;
+        border-radius: 15px;
+
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

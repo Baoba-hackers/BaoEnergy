@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/BaoEnergy.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.8.16;\r\n\r\ncontract BaoEnergy {\r\n\t//Define the struct of Consumer\r\n\tstruct Consumer {\r\n\t\tbool isMemberOfFreeEnergyMarket;\r\n\t\tuint256 cnpj;\r\n\t\tuint256 localId;\r\n\t\tbool active;\r\n\t}\r\n\r\n\t//Define the struct of Distributor\r\n\tstruct Distributor {\r\n\t\tuint256 cnpj;\r\n\t\tuint256 pricePerMonthKWH;\r\n\t\tuint256 localId;\r\n\t\tbool active;\r\n\t}\r\n\r\n\t//Define real user contracts\r\n\tstruct UserContract {\r\n\t\taddress consumer;\r\n\t\tuint256 energyConsume;\r\n\t\tuint256 pricePerMonth;\r\n\t\tuint256 timeStamp;\r\n\t\tuint256 localId;\r\n\t\tbool active;\r\n\t\tuint256 contractDeadLine;\r\n\t}\r\n\r\n\t//Define the struct of Propose\r\n\tstruct Propose {\r\n\t\tUserContract userContract;\r\n\t\taddress distributor;\r\n\t\taddress consumer;\r\n\t\tbool answered;\r\n\t}\r\n\r\n\t//Define the modifier of onlyConsumer\r\n\tmodifier onlyConsumer() {\r\n\t\trequire(consumers[msg.sender].active, \"Voce nao e um consumidor\");\r\n\t\t_;\r\n\t}\r\n\r\n\t//Define the modifier of onlyDistributor\r\n\tmodifier onlyDistributor() {\r\n\t\trequire(distributors[msg.sender].active, \"Voce nao e um distribuidor\");\r\n\t\t_;\r\n\t}\r\n\r\n\t//Define the event of newConsumerRegistered\r\n\tevent newConsumerRegistered(address indexed consumer);\r\n\r\n\t//Define the event of newProposeAdded\r\n\tevent newProposeAdded(address indexed _distributor);\r\n\r\n\t//Define the event of newDistributorAdded\r\n\tevent newDistributorAdded(address indexed _distributor);\r\n\r\n\t//Define the event of answeredPropose\r\n\tevent answeredPropose(uint256 indexed _id, bool _decision);\r\n\r\n\t//Define the mapping of Propose\r\n\tmapping(address => Propose[]) public proposes;\r\n\r\n\t//Define the mapping to store the mapping of Propose by localId\r\n\tmapping(uint256 => UserContract[]) public localToContract;\r\n\r\n\t//Define the mapping of Consumer\r\n\tmapping(address => Consumer) public consumers;\r\n\r\n\t//Define the mapping of Distributor by local\r\n\tmapping(uint256 => Distributor[]) public localIdToDistributors;\r\n\r\n\t//Define the mapping of Distributor\r\n\tmapping(address => Distributor) public distributors;\r\n\r\n\t//Define the mapping for consumer to userCOntract\r\n\tmapping(address => UserContract) public consumerToUserContract;\r\n\r\n\t//Define the function of registerConsumer\r\n\tfunction registerConsumer(\r\n\t\tuint256 _cnpj,\r\n\t\tuint256 _localId,\r\n\t\tbool _isMemberOfFreeEnergyMarket\r\n\t) public {\r\n\t\trequire(\r\n\t\t\t!distributors[msg.sender].active,\r\n\t\t\t\"Voce nao pode ser um distribuidor e um consumidor ao mesmo tempo\"\r\n\t\t);\r\n\t\tConsumer memory newConsumer = Consumer(\r\n\t\t\t_isMemberOfFreeEnergyMarket,\r\n\t\t\t_cnpj,\r\n\t\t\t_localId,\r\n\t\t\ttrue\r\n\t\t);\r\n\t\tconsumers[msg.sender] = newConsumer;\r\n\t\temit newConsumerRegistered(msg.sender);\r\n\t}\r\n\r\n\tfunction bestOptions(\r\n\t\tuint256 _localId\r\n\t) public view returns (Distributor[] memory) {\r\n\t\t//Return the best options of distributors for the consumer based on the localId\r\n\t\treturn localIdToDistributors[_localId];\r\n\t}\r\n\r\n\tfunction addPropose(\r\n\t\tuint256 _energyConsume,\r\n\t\tuint256 _pricePerMonth,\r\n\t\taddress _distributor,\r\n\t\tuint256 _localId\r\n\t) public onlyConsumer {\r\n\t\t//Checks if the _distributor is a distributor\r\n\t\trequire(\r\n\t\t\tdistributors[_distributor].active,\r\n\t\t\t\"O endereco passado nao e um distribuidor\"\r\n\t\t);\r\n\t\tUserContract memory newUserContract = UserContract(\r\n\t\t\tmsg.sender,\r\n\t\t\t_energyConsume,\r\n\t\t\t_pricePerMonth,\r\n\t\t\tblock.timestamp,\r\n\t\t\t_localId,\r\n\t\t\ttrue,\r\n\t\t\tblock.timestamp + 30 days\r\n\t\t);\r\n\t\tPropose memory newPropose = Propose(\r\n\t\t\tnewUserContract,\r\n\t\t\tmsg.sender,\r\n\t\t\t_distributor,\r\n\t\t\tfalse\r\n\t\t);\r\n\t\t//Add the propose to the mapping of proposes\r\n\t\tproposes[_distributor].push(newPropose);\r\n\t\t//Emit the event of newProposeAdded\r\n\t\temit newProposeAdded(_distributor);\r\n\t}\r\n\r\n\tfunction addDistributor(\r\n\t\tuint256 _cnpj,\r\n\t\tuint256 _pricePerMonthKWH,\r\n\t\tuint256 _localId\r\n\t) public {\r\n\t\trequire(\r\n\t\t\t!consumers[msg.sender].active,\r\n\t\t\t\"Voce nao pode ser um distribuidor e um consumidor ao mesmo tempo\"\r\n\t\t);\r\n\t\tDistributor memory newDistributor = Distributor(\r\n\t\t\t_cnpj,\r\n\t\t\t_pricePerMonthKWH,\r\n\t\t\t_localId,\r\n\t\t\ttrue\r\n\t\t);\r\n\t\t//Add the distributor to the localIdToDistributors\r\n\t\tlocalIdToDistributors[_localId].push(newDistributor);\r\n\t\t//Add the distributor to the mapping of distributors\r\n\t\tdistributors[msg.sender] = newDistributor;\r\n\t\temit newDistributorAdded(msg.sender);\r\n\t}\r\n\r\n\tfunction answerPropose(uint256 _id, bool _decision) public onlyDistributor {\r\n\t\t//Get the propose by the id\r\n\t\tPropose storage propose = proposes[msg.sender][_id];\r\n\t\t//Require that the msg.sender is the distributor of the propose\r\n\t\trequire(\r\n\t\t\tpropose.distributor != msg.sender,\r\n\t\t\t\"Voce nao e o distribuidor dessa proposta\"\r\n\t\t);\r\n\t\tpropose.answered = true;\r\n\r\n\t\tif (_decision) {\r\n\t\t\t//Add the propose's userContract into the mapping of consumerToUserContract\r\n\t\t\tconsumerToUserContract[propose.consumer] = propose.userContract;\r\n\t\t\t//Add the propose's userContract into the mapping of localToContract\r\n\t\t\tlocalToContract[propose.userContract.localId].push(\r\n\t\t\t\tpropose.userContract\r\n\t\t\t);\r\n\t\t\t//Define the propose as answered\r\n\t\t\tpropose.answered = true;\r\n\t\t}\r\n\t\t//Emit the event of newProposeAdded\r\n\t\temit newProposeAdded(msg.sender);\r\n\t}\r\n\r\n\tfunction getProposes() public view returns (Propose[] memory) {\r\n\t\treturn proposes[msg.sender];\r\n\t}\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
