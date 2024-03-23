@@ -6,22 +6,14 @@ import {FunctionsRequest} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract BaoFunction is FunctionsClient {
+    constructor(uint64 functionsSubscriptionId) FunctionsClient(router) {
+        subscriptionId = functionsSubscriptionId;      
+    }
+
+
     using FunctionsRequest for FunctionsRequest.Request;
 
     string answer;
-    //Define real user contracts
-    struct UserContract{
-        address consumer;
-        uint256 energyConsume;
-        uint256 pricePerMonth;
-        uint256 timeStamp;
-        uint256 localId;
-        bool active;
-        uint256 contractDeadLine;
-    }
-
-    //Define the mapping to store the mapping of Propose by localId
-    mapping(uint256 => UserContract[]) public localToContract;
 
     bytes32 public lastRequestId;
     bytes public lastResponse;
@@ -67,13 +59,10 @@ contract BaoFunction is FunctionsClient {
         "let newData = JSON.stringify(data)"
         "return Functions.encodeString(newData);";
 
-    constructor(uint64 functionsSubscriptionId) FunctionsClient(router) {
-        subscriptionId = functionsSubscriptionId;      
-    }
-
     function getAllMeanPrice(
         uint256 _localId
     ) external returns (bytes32) {
+        /*
         UserContract[] memory localsStruct = localToContract[_localId];
         string[] memory contracts;
         for(uint256 i = 0; i < localsStruct.length; i++) {
@@ -115,8 +104,8 @@ contract BaoFunction is FunctionsClient {
             err: ""
         });
         requestIds.push(lastRequestId);
-
-        return lastRequestId; 
+        */
+        return bytes32(0x666f6f6261720000000000000000000000000000000000000000000000000000); 
     }
 
     // Receive the weather in the city requested
