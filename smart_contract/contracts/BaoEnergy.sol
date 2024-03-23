@@ -20,7 +20,6 @@ contract BaoEnergy{
 
     //Define real user contracts
     struct UserContract{
-        address consumer;
         uint256 energyConsume;
         uint256 pricePerMonth;
         uint256 timeStamp;
@@ -95,7 +94,7 @@ contract BaoEnergy{
     function addPropose(uint256 _energyConsume, uint256 _pricePerMonth, address _distributor, uint256 _localId) onlyConsumer public{
         //Checks if the _distributor is a distributor
         require(distributors[_distributor].active, "O endereco passado nao e um distribuidor");
-        UserContract memory newUserContract = UserContract(msg.sender, _energyConsume, _pricePerMonth, block.timestamp, _localId, true, block.timestamp + 30 days);
+        UserContract memory newUserContract = UserContract(_energyConsume, _pricePerMonth, block.timestamp, _localId, true, block.timestamp + 30 days);
         Propose memory newPropose = Propose(newUserContract, msg.sender, _distributor, false);
         //Add the propose to the mapping of proposes
         proposes[_distributor].push(newPropose);
