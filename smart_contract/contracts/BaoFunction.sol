@@ -5,22 +5,14 @@ import {FunctionsClient} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0_
 import {FunctionsRequest} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/libraries/FunctionsRequest.sol";
 
 contract BaoFunction is FunctionsClient {
+    constructor(uint64 functionsSubscriptionId) FunctionsClient(router) {
+        subscriptionId = functionsSubscriptionId;      
+    }
+
+
     using FunctionsRequest for FunctionsRequest.Request;
 
     string answer;
-    //Define real user contracts
-    struct UserContract{
-        address consumer;
-        uint256 energyConsume;
-        uint256 pricePerMonth;
-        uint256 timeStamp;
-        uint256 localId;
-        bool active;
-        uint256 contractDeadLine;
-    }
-
-    //Define the mapping to store the mapping of Propose by localId
-    mapping(uint256 => UserContract[]) public localToContract;
 
     bytes32 public lastRequestId;
     bytes public lastResponse;
@@ -66,29 +58,26 @@ contract BaoFunction is FunctionsClient {
         "let newData = JSON.stringify(data)"
         "return Functions.encodeString(newData);";
 
-    constructor(uint64 functionsSubscriptionId) FunctionsClient(router) {
-        subscriptionId = functionsSubscriptionId;      
-    }
-
-    // function getAllMeanPrice(
-    //     uint256 _localId
-    // ) external returns (bytes32) {
-    //     UserContract[] memory localsStruct = localToContract[_localId];
-    //     string[] memory contracts;
-    //     // for(uint256 i = 0; i < localsStruct.length; i++) {
-    //     //     contracts[i] = 
-    //     //     concatenateStrings(
-    //     //         concatenateStrings(
-    //     //             concatenateStrings(
-    //     //                 concatenateStrings(
-    //     //                     concatenateStrings(
-    //     //                         concatenateStrings(
-    //     //                             Strings.toHexString(localsStruct[i].consumer), 
-    //     //                             Strings.toString(localsStruct[i].energyConsume)), 
-    //     //                         Strings.toString(localsStruct[i].pricePerMonth)), 
-    //     //                     Strings.toString(localsStruct[i].timeStamp)),
-    //     //                 Strings.toString(localsStruct[i].localId)),
-    //     //             (localsStruct[i].active ? "true" : "false")), 
+    function getAllMeanPrice(
+        uint256 _localId
+    ) external returns (bytes32) {
+        /*
+        UserContract[] memory localsStruct = localToContract[_localId];
+        string[] memory contracts;
+        for(uint256 i = 0; i < localsStruct.length; i++) {
+            contracts[i] = 
+            concatenateStrings(
+                concatenateStrings(
+                    concatenateStrings(
+                        concatenateStrings(
+                            concatenateStrings(
+                                concatenateStrings(
+                                    Strings.toHexString(localsStruct[i].consumer), 
+                                    Strings.toString(localsStruct[i].energyConsume)), 
+                                Strings.toString(localsStruct[i].pricePerMonth)), 
+                            Strings.toString(localsStruct[i].timeStamp)),
+                        Strings.toString(localsStruct[i].localId)),
+                    (localsStruct[i].active ? "true" : "false")), 
 
     //     //     Strings.toString(localsStruct[i].contractDeadLine));
     //     // }
@@ -106,17 +95,17 @@ contract BaoFunction is FunctionsClient {
     //         gasLimit,
     //         donID
     //     );
+        requests[lastRequestId] = RequestStatus({
+            exists: true,
+            fulfilled: false,
+            response: "",
+            err: ""
+        });
+        requestIds.push(lastRequestId);
+        */
+        return bytes32(0x666f6f6261720000000000000000000000000000000000000000000000000000); 
+    }
 
-    //     requests[lastRequestId] = RequestStatus({
-    //         exists: true,
-    //         fulfilled: false,
-    //         response: "",
-    //         err: ""
-    //     });
-    //     requestIds.push(lastRequestId);
-
-    //     return lastRequestId; 
-    // }
 
     // Receive the weather in the city requested
     function fulfillRequest(

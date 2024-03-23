@@ -3,10 +3,12 @@ const fs = require("fs");
 
 async function main(){
     const [deployer] = await ethers.getSigners();
-    console.log("Deploying contracts with the account:", deployer.address);
+    const address = deployer.address;
+
+    console.log("Deploying contracts with the account:", address);
     const contract = await ethers.getContractFactory("BaoEnergy");
 
-    const bao = await contract.deploy(2196);
+    const bao = await contract.deploy(2196, address);
 
     console.log("bao address:", bao.target);
 
@@ -18,7 +20,6 @@ async function main(){
     data = JSON.parse(data);
 
     //Adicione o endereço do contrato L1 ao JSON
-
     data["L1_ADDRESS"] = bao.target   
 
     const newData = JSON.stringify(data);
