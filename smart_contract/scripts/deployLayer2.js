@@ -3,7 +3,7 @@ const fs = require("fs");
 
 
 async function getAbi(){
-  const artifactPath = "artifacts/contracts/BaoPrices.sol/BaoPrices.json";
+  const artifactPath = "artifacts/contracts/BaoStorage.sol/BaoStorage.json";
   const artifact = JSON.parse(fs.readFileSync(artifactPath, "utf-8"));
   console.log(artifact);
   return artifact.abi;
