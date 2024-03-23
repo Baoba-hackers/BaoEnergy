@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.5;
+pragma solidity >=0.8.16;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
+//import "@openzeppelin/contracts/access/Ownable.sol";
 import "@scroll-tech/contracts/libraries/IScrollMessenger.sol";
 
-contract BaoTrack is Ownable {
+contract BaoTrack {
     struct Transaction {
         uint256 productId;
         uint256 amount;
@@ -21,8 +21,6 @@ contract BaoTrack is Ownable {
 
     mapping(address => Proposal[]) private proposals;
     mapping(uint => mapping(uint => Transaction[])) private transactions;//Product Id to LocalId to Transactions
-
-    constructor(address initialOwner) Ownable(initialOwner) {}
 
     event ProposalAdded(address indexed receiver, uint256 indexed index);
     event answeredTransaction(uint256 indexed transactionId, bool decision);
@@ -58,10 +56,9 @@ contract BaoTrack is Ownable {
     }
 
     function answerProposal(uint _index, bool _decision) public {
-        require(msg.sender == proposal.receiver, "You should be the receiver to answer this proposal");
-        require((proposals[receiver].length - 1) <= _index, "You should be the receiver to answer this proposal");
-
+        require((proposals[msg.sender].length - 1) <= _index, "You should be the receiver to answer this proposal");
         Proposal memory proposal = proposals[msg.sender][_index];
+        require(msg.sender == proposal.receiver, "You should be the receiver to answer this proposal");
         if (_decision) {
             Transaction memory transaction = proposal.transaction;
             transactions[transaction.productId][transaction.localId].push(transaction);
@@ -87,7 +84,7 @@ contract BaoTrack is Ownable {
     ) public payable {
             IScrollMessenger scrollMessenger = IScrollMessenger(_scrollMessengerAddress);
             
-            Transaction[] newTransactions = transactions[_productId][_localId];
+            Transaction[] memory newTransactions = transactions[_productId][_localId];
 
             scrollMessenger.sendMessage{ value: msg.value }(
             _targetAddress,
