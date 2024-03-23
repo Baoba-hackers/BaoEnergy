@@ -4,7 +4,7 @@ const fs = require("fs");
 async function main(){
     const [deployer] = await ethers.getSigners();
     console.log("Deploying contracts with the account:", deployer.address);
-    const contract = await ethers.getContractFactory("BaoPrices");
+    const contract = await ethers.getContractFactory("BaoStorage");
 
     const bao = await contract.deploy();
 
