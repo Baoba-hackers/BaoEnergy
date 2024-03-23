@@ -4,8 +4,7 @@ const fs = require("fs");
 async function main(){
     const [deployer] = await ethers.getSigners();
     console.log("Deploying contracts with the account:", deployer.address);
-    console.log(deployer)
-    const contract = await ethers.getContractFactory("BaoTrackL2");
+    const contract = await ethers.getContractFactory("BaoTrack");
 
     const bao = await contract.deploy();
 
@@ -20,12 +19,14 @@ async function main(){
 
     //Adicione o endereço do contrato L1 ao JSON
 
-    data["L2_ADRESS"] = bao.target   
+    data["L1_ADDRESS"] = bao.target   
 
     const newData = JSON.stringify(data);
 
     //Escreva no config.json
     fs.writeFileSync('config.json', newData);
+
+
 }
 
 main()

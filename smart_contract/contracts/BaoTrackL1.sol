@@ -56,9 +56,9 @@ contract BaoTrack {
     }
 
     function answerProposal(uint _index, bool _decision) public {
-        require((proposals[msg.sender].length - 1) <= _index, "You should be the receiver to answer this proposal");
+        require((proposals[msg.sender].length - 1) <= _index, "O index buscado nao existe");
         Proposal memory proposal = proposals[msg.sender][_index];
-        require(msg.sender == proposal.receiver, "You should be the receiver to answer this proposal");
+        require(msg.sender == proposal.receiver, "Voce deve ser o destinatario para responder essa proposta");
         if (_decision) {
             Transaction memory transaction = proposal.transaction;
             transactions[transaction.productId][transaction.localId].push(transaction);
