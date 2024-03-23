@@ -1,4 +1,4 @@
-## ezTrack
+## BaoTrack
 #### Integrantes:
 - <a href="https://www.linkedin.com/in/danielzular/">Daniel Zular</a>
 - <a href="https://www.linkedin.com/in/davi-motta/">Davi Motta</a>
@@ -13,21 +13,20 @@
 
 [2. Objetivos e Justificativa](#c2)
 
-[3. Metodologia](#c3)
+[3. Análise de Mercado e Desenvolvimento](#c3)
 
-[4. Desenvolvimento e Resultados](#c4)
+[4. Arquitetura da Solução](#c4)
 
-[5. Solução Proposta](#c5)
+[5. Conclusões e Próximos Passos](#c6)
 
-[6. Conclusões e Recomendações](#c6)
-
-[7. Referências](#c7)
+[6. Referências](#c7)
 
 ## <a name="c1"></a>1. Introdução
 &emsp;A plataforma BaoTrack visa solucionar a falta de transparência nos preços históricos praticados por fornecedores e o desvio de dinheiro presente na compra de insumos indiretos nas mais diversas empresas. Por meio da implementação de uma solução inovadora utilizando a tecnologia blockchain, o objetivo principal é dinamizar o processo de cotação na área de Supply Chain - Sourcing, automatizando a negociação e aumentando a transparência e segurança nas transações.<p>
 &emsp;A solução BaoTrack utiliza as tecnologias ChainLink, Hardhat, Next.js, Scaffold e Scroll para criar um serviço que emprega a blockchain na determinação do preço médio de mercado para insumos indiretos. Isso assegura que os usuários paguem um preço justo, enquanto proporciona total transparência e rastreabilidade das transações para as áreas de Supply Chain e Auditoria das empresas.<p>
 &emsp;Além disso, busca-se a criação de um ambiente confiável e eficiente, eliminando a necessidade de intermediários e promovendo uma rede de informações confiáveis entre os parceiros.<p>
 
+## <a name="c2"></a>2. Objetivos e Justificativa
 
 ### 2.1 Objetivos Gerais
 
@@ -55,31 +54,30 @@
 
 &emsp;Esses objetivos são fundamentais para orientar o desenvolvimento e a implementação bem-sucedida do projeto BaoTrack, visando resolver os desafios identificados na gestão de cotações e compras na cadeia de suprimentos das empresas.<p>
 
-### 2.2 Justificativa
+### 2.3 Justificativa
 
+## <a name="c3"></a>3. Análise de Mercado e Desenvolvimento
 
+### 3.1 Contexto da Indústria
 
-### 2.3 Proposta de solução
-### 3.1  Análise de Mercado
+### 3.2 Análise das 5 Forças de Porter
 
+### 3.3 Análise SWOT
 
-### 3.2 Value Proposition Canvas 
+### 3.4 Value Proposition Canvas
 
+### 3.5 Personas & User Story 
 
-### 3.3 Personas
+### 3.6 Regras de Negócios
 
-### 3.4 User Stories
+## <a name="c4"></a>4. Arquitetura da Solução
 
-### 3.5 Forças de Porter
+### 4.1 Visão Geral da Arquitetura
 
-### 4. Wireframe
+### 4.2 Tecnologias Utilizadas
 
-### 5.Arquitetura da Solução
+### 4.3 Diagrama de Blocos
 
+## <a name="c5"></a>5. Conclusões e Próximos Passos
 
-#### 6.Regras de Negócio
-
-
-
-## <a name="c7"></a>7. Referências
-
+## <a name="c6"></a>6. Referências
