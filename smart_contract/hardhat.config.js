@@ -3,7 +3,7 @@ require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
 //use sepolia
 module.exports = {
-  solidity: "0.8.16",
+  solidity: "0.8.19",
   networks: {
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io/" || "",

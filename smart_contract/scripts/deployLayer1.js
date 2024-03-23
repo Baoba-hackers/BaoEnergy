@@ -6,7 +6,7 @@ async function main(){
     console.log("Deploying contracts with the account:", deployer.address);
     const contract = await ethers.getContractFactory("BaoEnergy");
 
-    const bao = await contract.deploy();
+    const bao = await contract.deploy(2196);
 
     console.log("bao address:", bao.target);
 
