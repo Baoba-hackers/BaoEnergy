@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { SingleContractWriteMethods } from '../debug/_components/contract/SingleContractWriteMethods';
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
-import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import Link from 'next/link';
+import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
-const RegisterConsumer = () => {
+const AnswerProposal = () => {
     const contractName = "BaoEnergy";
     const functionNameWrite = "answerPropose";
 
@@ -16,8 +16,7 @@ const RegisterConsumer = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = "/home"
-
+        window.location.href = '/meanprice';
     };
 
     const [walletConnected, setWalletConnected] = useState(isConnected);
@@ -50,4 +49,4 @@ const RegisterConsumer = () => {
     );
 };
 
-export default RegisterConsumer;
+export default AnswerProposal;

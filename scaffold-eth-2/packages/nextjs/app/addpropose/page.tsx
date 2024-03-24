@@ -6,18 +6,16 @@ import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedCon
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
-import Link from 'next/link';
-
-const AddDistributor = () => {
+const AnswerProposal = () => {
     const contractName = "BaoEnergy";
-    const functionNameWrite = "addDistributor";
+    const functionNameWrite = "addPropose";
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
     const { isConnected } = useAccount();
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/answerPropose';
+        window.location.href = '/home';
     };
 
     const [walletConnected, setWalletConnected] = useState(isConnected);
@@ -43,11 +41,8 @@ const AddDistributor = () => {
                     functionName={functionNameWrite}
                 />
             )}
-            <Link href="/home">
-                <p className="text-primary">Home</p>
-            </Link>
         </div>
     );
 };
 
-export default AddDistributor;
+export default AnswerProposal;

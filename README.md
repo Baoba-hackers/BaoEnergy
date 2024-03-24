@@ -18,7 +18,11 @@ BaoEnergy proposes an innovative blockchain solution to reshape access to the Fr
 
 ## 🎬 Demo Video
 
-<p> <a href="https://www.youtube.com/watch?v=z9kgMZE8R3c">This video </a> shows the main funcionalities of our application by the energy consumer side.</p>
+<p> <a href="https://www.youtube.com/watch?v=z9kgMZE8R3c ">This video </a> shows the main funcionalities of our application by the energy consumer side.</p>
+
+## Deploy
+
+<p> <a href="https://baoenergy.vercel.app">Application running on vercel</a>.</p>
 
 ## 📁 Where to find the Sponsors' Technologies
 
@@ -32,4 +36,30 @@ BaoEnergy proposes an innovative blockchain solution to reshape access to the Fr
 
 - Scroll
   &emsp;| It's the way we deploy the contracts<br>
+
+  ## Prerequisites
+Before running this project, ensure you have the following prerequisites installed:
+
+- [Node.js](https://nodejs.org/) (version 20.9.0 or higher)
+- [Yarn](https://yarnpkg.com/) (version 3.4.3 or higher)
+
+## Installation
+1. Clone the repository to your local machine:
+   ```sh
+   git clone https://github.com/Baoba-hackers/BaoEnergy
+   ```
+2. Navigate to the `scaffold-eth-2` directory:
+   ```sh
+   cd scaffold-eth-2
+   ```
+3. Install dependencies using Yarn:
+   ```sh
+   yarn
+   ```
+   
+## Usage
+1. After installing dependencies, start the project by running the following command in `scaffold-eth-2` directory:
+   ```sh
+   yarn start
+   ```
  
