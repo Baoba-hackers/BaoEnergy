@@ -36,12 +36,13 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "sass": "^1.72.0"
   },
   "dependencies": {
     "@chainlink/contracts": "^0.8.0",
+    "husky": "^9.0.11",
     "isomorphic-ws": "^5.0.0",
-    "sass": "^1.72.0"
+    "next": "^14.1.4"
   }
 }
