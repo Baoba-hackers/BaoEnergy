@@ -22,7 +22,7 @@ BaoEnergy proposes an innovative blockchain solution to reshape access to the Fr
 
 ## Deploy
 
-<p> <a href="https://baoenergy-kwk5nxcjv-baoenergy.vercel.app">Application running on vercel</a>.</p>
+<p> <a href="https://baoenergy.vercel.app">Application running on vercel</a>.</p>
 
 
 ## 📁 Where to find the Sponsors' Technologies
