@@ -9,8 +9,8 @@ secrets = {}
 with open('mock.json') as f:
     secrets = json.load(f)
 
-link = "https://sepolia-rpc.scroll.io/"
-private_key = secrets['config']["privateKey"]
+link = "https://eth-sepolia.g.alchemy.com/v2/xu-OLKHDxb7nGuGwwnibrgp5Dt-UclQN"
+private_key = "832f1bedd5eb36837d2d2032d80d4b68a25ecbd282abed4df59a887501949cb8"
 contract_address = ''
 abi_file = "./abi.json"
 
@@ -58,3 +58,16 @@ app.add_middleware(
 async def root(stateId: int):
     return getTransactions(manager, stateId)
 # passar lista como parâmetro
+
+@app.get("/hash-table/{num}")
+async def getHashTableNum(num: int):
+    data_table = []
+
+    with open('hash_table.json') as f:
+        data_table = json.load(f)["hashTable"]
+    
+    resto = num % len(data_table)
+
+    return data_table[resto]
+
+

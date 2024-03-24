@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.16;
- 
-import "contracts/BaoFunction.sol";
+
+pragma solidity ^0.8.19;
+
+import "./BaoFunction.sol";
 
 contract BaoEnergy is BaoFunction {
-    constructor(uint64 _functionsSubscriptionId) BaoFunction(_functionsSubscriptionId) {}
+    constructor(uint64 functionsSubscriptionId) BaoFunction(functionsSubscriptionId) { }
+    
     //Define the struct of Consumer
     struct Consumer{
         bool isMemberOfFreeEnergyMarket;
@@ -80,6 +82,9 @@ contract BaoEnergy is BaoFunction {
 
     //Define the mapping for consumer to userCOntract
     mapping(address => UserContract) public consumerToUserContract;
+
+    //Define the mapping to store the mapping of Propose by localId
+    mapping(uint256 => UserContract[]) public localToContract;
 
     //Define the function of registerConsumer
     function registerConsumer(uint256 _cnpj, uint256 _localId, bool _isMemberOfFreeEnergyMarket) public {
