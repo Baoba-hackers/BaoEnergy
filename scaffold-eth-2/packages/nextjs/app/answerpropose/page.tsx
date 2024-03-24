@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { SingleContractWriteMethods } from '../debug/_components/contract/SingleContractWriteMethods';
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
+import Link from 'next/link';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 const AnswerProposal = () => {
