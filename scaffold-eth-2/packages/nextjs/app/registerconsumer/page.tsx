@@ -15,7 +15,7 @@ const RegisterConsumer = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = "/meanprice"
+        window.location.href = "/meanprice";
 
     };
 

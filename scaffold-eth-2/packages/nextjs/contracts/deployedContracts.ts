@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   11155111: {
     BaoEnergy: {
-      address: "0x3843b4231B17296657CC59405210070A6efC4D5d",
+      address: "0xa0C0Fb931e8903C21A0e73A15AB1Cbab51f63FF8",
       abi: [
         {
           inputs: [

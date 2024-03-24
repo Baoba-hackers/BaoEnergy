@@ -6,6 +6,8 @@ import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedCon
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
+import Link from 'next/link';
+
 const AddDistributor = () => {
     const contractName = "BaoEnergy";
     const functionNameWrite = "addDistributor";
@@ -41,6 +43,9 @@ const AddDistributor = () => {
                     functionName={functionNameWrite}
                 />
             )}
+            <Link href="/home">
+                <p className="text-primary">Home</p>
+            </Link>
         </div>
     );
 };
