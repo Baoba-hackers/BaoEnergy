@@ -7,8 +7,96 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   11155111: {
     BaoEnergy: {
-      address: "0x85d347AF541132F53CcE42d5336BC48CEDC42200",
+      address: "0x3843b4231B17296657CC59405210070A6efC4D5d",
       abi: [
+        {
+          inputs: [
+            {
+              internalType: "uint64",
+              name: "functionsSubscriptionId",
+              type: "uint64",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "EmptyArgs",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "EmptySource",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "NoInlineSecrets",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "OnlyRouterCanFulfill",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "bytes32",
+              name: "id",
+              type: "bytes32",
+            },
+          ],
+          name: "RequestFulfilled",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "bytes32",
+              name: "id",
+              type: "bytes32",
+            },
+          ],
+          name: "RequestSent",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "bytes32",
+              name: "requestId",
+              type: "bytes32",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "averagePrice",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "bytes",
+              name: "response",
+              type: "bytes",
+            },
+            {
+              indexed: false,
+              internalType: "bytes",
+              name: "err",
+              type: "bytes",
+            },
+          ],
+          name: "Response",
+          type: "event",
+        },
         {
           anonymous: false,
           inputs: [
@@ -188,11 +276,6 @@ const deployedContracts = {
           name: "consumerToUserContract",
           outputs: [
             {
-              internalType: "address",
-              name: "consumer",
-              type: "address",
-            },
-            {
               internalType: "uint256",
               name: "energyConsume",
               type: "uint256",
@@ -295,6 +378,25 @@ const deployedContracts = {
           type: "function",
         },
         {
+          inputs: [
+            {
+              internalType: "string",
+              name: "deviceId",
+              type: "string",
+            },
+          ],
+          name: "getMeasure",
+          outputs: [
+            {
+              internalType: "bytes32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
           inputs: [],
           name: "getProposes",
           outputs: [
@@ -302,11 +404,6 @@ const deployedContracts = {
               components: [
                 {
                   components: [
-                    {
-                      internalType: "address",
-                      name: "consumer",
-                      type: "address",
-                    },
                     {
                       internalType: "uint256",
                       name: "energyConsume",
@@ -338,7 +435,7 @@ const deployedContracts = {
                       type: "uint256",
                     },
                   ],
-                  internalType: "struct BaoEnergy.UserContract",
+                  internalType: "struct BaoFunction.UserContract",
                   name: "userContract",
                   type: "tuple",
                 },
@@ -361,6 +458,68 @@ const deployedContracts = {
               internalType: "struct BaoEnergy.Propose[]",
               name: "",
               type: "tuple[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes32",
+              name: "requestId",
+              type: "bytes32",
+            },
+            {
+              internalType: "bytes",
+              name: "response",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes",
+              name: "err",
+              type: "bytes",
+            },
+          ],
+          name: "handleOracleFulfillment",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "lastError",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "lastRequestId",
+          outputs: [
+            {
+              internalType: "bytes32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "lastResponse",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
             },
           ],
           stateMutability: "view",
@@ -421,11 +580,6 @@ const deployedContracts = {
           name: "localToContract",
           outputs: [
             {
-              internalType: "address",
-              name: "consumer",
-              type: "address",
-            },
-            {
               internalType: "uint256",
               name: "energyConsume",
               type: "uint256",
@@ -477,11 +631,6 @@ const deployedContracts = {
             {
               components: [
                 {
-                  internalType: "address",
-                  name: "consumer",
-                  type: "address",
-                },
-                {
                   internalType: "uint256",
                   name: "energyConsume",
                   type: "uint256",
@@ -512,7 +661,7 @@ const deployedContracts = {
                   type: "uint256",
                 },
               ],
-              internalType: "struct BaoEnergy.UserContract",
+              internalType: "struct BaoFunction.UserContract",
               name: "userContract",
               type: "tuple",
             },
@@ -558,8 +707,103 @@ const deployedContracts = {
           stateMutability: "nonpayable",
           type: "function",
         },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "requestIds",
+          outputs: [
+            {
+              internalType: "bytes32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes32",
+              name: "",
+              type: "bytes32",
+            },
+          ],
+          name: "requests",
+          outputs: [
+            {
+              internalType: "address",
+              name: "wallet",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "fulfilled",
+              type: "bool",
+            },
+            {
+              internalType: "bool",
+              name: "exists",
+              type: "bool",
+            },
+            {
+              internalType: "bytes",
+              name: "response",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes",
+              name: "err",
+              type: "bytes",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "source",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "subscriptionId",
+          outputs: [
+            {
+              internalType: "uint64",
+              name: "",
+              type: "uint64",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
       ],
-      inheritedFunctions: {},
+      inheritedFunctions: {
+        consumerToUserContract: "contracts/BaoFunction.sol",
+        getMeasure: "contracts/BaoFunction.sol",
+        handleOracleFulfillment: "contracts/BaoFunction.sol",
+        lastError: "contracts/BaoFunction.sol",
+        lastRequestId: "contracts/BaoFunction.sol",
+        lastResponse: "contracts/BaoFunction.sol",
+        requestIds: "contracts/BaoFunction.sol",
+        requests: "contracts/BaoFunction.sol",
+        source: "contracts/BaoFunction.sol",
+        subscriptionId: "contracts/BaoFunction.sol",
+      },
     },
   },
 } as const;
