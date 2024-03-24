@@ -15,7 +15,7 @@
 
 [3. Análise de Mercado e Desenvolvimento](#c3)
 
-[4. Arquitetura da Solução](#c4)
+[4. Tecnologias Utilizadas](#c4)
 
 [5. Conclusões e Próximos Passos](#c6)
 
@@ -146,14 +146,14 @@ A proposta da BaoEnergy não é apenas tecnologicamente avançada, mas também a
 <p align="center">
 <br>
 Figura 03 - Persona Consumidor <br>
-<img src="../assets/imagens/persona-distribuidor.png" style="display: block; margin: auto;"></img>
+<img src="../assets/images/persona-distribuidor.png" style="display: block; margin: auto;"></img>
 Fonte: Elaborado pelos autores.
 </p>
 
 <p align="center">
 <br>
 Figura 04 - Persona Distribuidor <br>
-<img src="../assets/imagens/persona-consumidor.png" style="display: block; margin: auto;"></img>
+<img src="../assets/images/persona-consumidor.png" style="display: block; margin: auto;"></img>
 Fonte: Elaborado pelos autores.
 </p>
 
@@ -167,14 +167,14 @@ Fonte: Elaborado pelos autores.
 <p align="center">
 <br>
 Figura 01 - Value Proposition Canvas - Persona Consumidor <br>
-<img src="../assets/imagens/vpc-consumidor.png" style="display: block; margin: auto;"></img>
+<img src="../assets/images/vpc-consumidor.png" style="display: block; margin: auto;"></img>
 Fonte: Elaborado pelos autores.
 </p>
 
 <p align="center">
 <br>
 Figura 02 - Value Proposition Canvas - Persona Distribuidor <br>
-<img src="../assets/imagens/vpc-distribuidor.png" style="display: block; margin: auto;"></img>
+<img src="../assets/images/vpc-distribuidor.png" style="display: block; margin: auto;"></img>
 Fonte: Elaborado pelos autores.
 </p>
 
@@ -188,19 +188,24 @@ Fonte: Elaborado pelos autores.
 
 
 
+## <a name="c4"></a>4. Tecnologias Utilizadas
 
-### 3.6 Regras de Negócios
+&emsp; Durante a criação deste projeto foram utilizadas tecnologias como Scafolld - da BuidlGuidl -, Scroll e Chainlink. No que diz respeito ao Scaffold, utilizamos para facilitar a integração dos smart contracts com o front-end. Isto pois ao dar deploy no Smart Contract esta ferramenta gera funções capazes de conectá-lo a um front-end também criado automaticamente. Não obstante, para melhorar a experiência do usuário, o front-end geraodo pelo Scaffold foi refatorado a fim de torná-lo mais condizente e adequado ao que a nossa solução deseja oferecer ao usuário como experiência.
 
-## <a name="c4"></a>4. Arquitetura da Solução
+&emsp; No que tange à Chainlink, utilizamos suas functions para obter e monitorar os dados de relógio de luz utilizados pelos clientes. Desta forma, estes podem aferir seu consumo de energia a fim de garabtir que estarão pagando preços justos e proporcionais aos seus gastos.
 
-### 4.1 Visão Geral da Arquitetura
+&emsp; Com a ferramenta Scroll, o principal objetivo é executar operações mais pesadas em sua Layer 2, as quais demandariam altos níveis de gas na rede Ethereum. Assim, poderíamos realizar as tarefas necessárias reduzindo o gasto para tal. Por este motivo realizaremos o deploy de um smart contract na rede da Scroll.
+No etanto, no dado momento, criar a bridge, a qual funciona como uma ponte entre as Layers 1 e 2, tem se mostrado dificultoso, trazendo problemas que nem mesmo os desenvolvedores da rede tem conseguido resolver.</p>
 
-### 4.2 Tecnologias Utilizadas
-
-### 4.3 Diagrama de Blocos
 
 ## <a name="c5"></a>5. Conclusões e Próximos Passos
 
-Tendo em vista o projeto apresentado acima, 
+ &emsp; A implementação da BaoEnergy marca um passo significativo rumo à revolução do Mercado Livre de Energia (MLE) no Brasil. Ao aproveitar a tecnologia blockchain, a plataforma introduz uma abordagem inovadora que promove a interação direta entre consumidores e fornecedores de energia, otimizando processos e aumentando a transparência. Ao oferecer benefícios quantificáveis, como redução de custos e aumento da eficiência, juntamente com vantagens intangíveis, como melhoria da percepção de mercado e acesso à energia limpa, a BaoEnergy surge como um catalisador de mudanças, pronto para remodelar o cenário da distribuição de energia no Brasil.
+
+&emsp; Olhando para o futuro, um foco-chave reside na integração e otimização do sistema de pagamento DREX dentro da plataforma. A implementação do DREX como método de pagamento oferece inúmeras vantagens, incluindo segurança aprimorada, redução de custos de transação e maior conveniência para os usuários. Para aproveitar esses benefícios, os próximos passos envolvem o aprimoramento da experiência do usuário em torno dos pagamentos com DREX, garantindo integração perfeita com as infraestruturas de pagamento existentes e conduzindo testes abrangentes para garantir confiabilidade e escalabilidade. Além disso, explorar parcerias estratégicas e colaborações para expandir as redes de aceitação do DREX e promover a adoção tanto entre consumidores quanto fornecedores será fundamental para impulsionar o crescimento da plataforma e solidificar sua posição como uma inovadora líder no mercado de energia. </p>
+
 
 ## <a name="c6"></a>6. Referências
+
+
+
