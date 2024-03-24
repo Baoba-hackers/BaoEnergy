@@ -5,7 +5,6 @@ import { SingleContractWriteMethods } from '../debug/_components/contract/Single
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
-import { redirect } from 'next/navigation';
 
 const RegisterConsumer = () => {
     const contractName = "BaoEnergy";
@@ -16,7 +15,7 @@ const RegisterConsumer = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        redirect('/seedistributors')
+        window.location.href = "/seedistributors"
 
     };
 
