@@ -15,7 +15,7 @@ const RegisterConsumer = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = "/seedistributors"
+        window.location.href = "/addconsume"
 
     };
 

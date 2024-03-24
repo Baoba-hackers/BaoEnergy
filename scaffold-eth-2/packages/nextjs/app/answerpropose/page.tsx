@@ -5,6 +5,7 @@ import { SingleContractWriteMethods } from '../debug/_components/contract/Single
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import Link from 'next/link';
 
 const RegisterConsumer = () => {
     const contractName = "BaoEnergy";
@@ -27,8 +28,8 @@ const RegisterConsumer = () => {
 
     return (
         <div className="flex flex-col justify-center items-center h-screen">
-            <h2 className="text-primary">Consumidor, faça o seu registro</h2>
-            <h4>Solicitamos informações específicas no cadastro de novos usuários para garantir transparência e eficiência em nossas operações.</h4>
+            <h2 className="text-primary">Responder propostas enviadas</h2>
+            <h4>Selecione e responda as propostas enviadas</h4>
             {!walletConnected && (
                 <>
                     <p>Conecte sua carteira para começar</p>
@@ -42,6 +43,9 @@ const RegisterConsumer = () => {
                     functionName={functionNameWrite}
                 />
             )}
+            <Link href="/home">
+                <p className="text-primary">Home</p>
+            </Link>
         </div>
     );
 };

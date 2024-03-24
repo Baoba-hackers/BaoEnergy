@@ -6,6 +6,7 @@ import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedCon
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 const addDistributor = () => {
     const contractName = "BaoEnergy";
@@ -16,7 +17,7 @@ const addDistributor = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/getProposals';
+        window.location.href = '/getproposals';
 
     };
 
@@ -43,6 +44,9 @@ const addDistributor = () => {
                     functionName={functionNameWrite}
                 />
             )}
+            <Link href="/home">
+                <p className="text-primary">Home</p>
+            </Link>
         </div>
     );
 };
