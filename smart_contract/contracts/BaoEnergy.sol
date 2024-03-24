@@ -2,25 +2,10 @@
 pragma solidity ^0.8.19;
 
 import "./BaoFunction.sol";
-import "./BaoOwnable.sol";
-import "@scroll-tech/contracts/libraries/IScrollMessenger.sol";
 
-
-contract BaoEnergy is BaoFunction, BaoOwnable {
-    constructor(uint64 _functionsSubscriptionId, address _owner) BaoFunction(_functionsSubscriptionId) BaoOwnable(_owner) { }
-
-    address public l2Address;
-
-    address public senderMessageAddress;
-
-    function setSenderMessageAddress(address _senderMessageAdress) public onlyOwner {
-        senderMessageAddress = _senderMessageAdress;
-    }
-
-    function setL2Address(address _l2Address) public onlyOwner {
-        l2Address = _l2Address;
-    }
-
+contract BaoEnergy is BaoFunction {
+    constructor(uint64 functionsSubscriptionId) BaoFunction(functionsSubscriptionId) { }
+    
     //Define the struct of Consumer
     struct Consumer{
         bool isMemberOfFreeEnergyMarket;
@@ -94,6 +79,9 @@ contract BaoEnergy is BaoFunction, BaoOwnable {
     //Define the mapping for consumer to userCOntract
     mapping(address => UserContract) public consumerToUserContract;
 
+    //Define the mapping to store the mapping of Propose by localId
+    mapping(uint256 => UserContract[]) public localToContract;
+
     //Define the function of registerConsumer
     function registerConsumer(uint256 _cnpj, uint256 _localId, bool _isMemberOfFreeEnergyMarket) public {
         require(!distributors[msg.sender].active, "Voce nao pode ser um distribuidor e um consumidor ao mesmo tempo");
@@ -120,7 +108,6 @@ contract BaoEnergy is BaoFunction, BaoOwnable {
 
     function addDistributor(uint256 _cnpj, uint256 _pricePerMonthKWH, uint256 _localId) public{
         require(!consumers[msg.sender].active, "Voce nao pode ser um distribuidor e um consumidor ao mesmo tempo");
-        require(l2Address != address(0), "e necessario o endereco do contrato l2");
         Distributor memory newDistributor = Distributor(_cnpj, _pricePerMonthKWH, _localId, true);
         //Add the distributor to the localIdToDistributors
         localIdToDistributors[_localId].push(newDistributor);
@@ -129,7 +116,7 @@ contract BaoEnergy is BaoFunction, BaoOwnable {
         emit newDistributorAdded(msg.sender);
     }
 
-    function answerPropose(uint256 _id, bool _decision, uint256 value, uint256 gasLimit) onlyDistributor public payable {
+    function answerPropose(uint256 _id, bool _decision) onlyDistributor public{
         //Get the propose by the id
         Propose storage propose = proposes[msg.sender][_id];
         //Require that the msg.sender is the distributor of the propose
@@ -140,15 +127,7 @@ contract BaoEnergy is BaoFunction, BaoOwnable {
             //Add the propose's userContract into the mapping of consumerToUserContract
             consumerToUserContract[propose.consumer] = propose.userContract;
             //Add the propose's userContract into the mapping of localToContract
-            IScrollMessenger scrollMessenger = IScrollMessenger(senderMessageAddress);
-            // sendMessage is able to execute any function by encoding the abi using the encodeWithSignature function
-            scrollMessenger.sendMessage{ value: msg.value }(
-                l2Address,
-                value,
-                abi.encodeWithSignature("addUserContract(UserContract)", propose.userContract),
-                gasLimit,
-                msg.sender
-            );
+            localToContract[propose.userContract.localId].push(propose.userContract);
             //Define the propose as answered
             propose.answered = true;
         }
