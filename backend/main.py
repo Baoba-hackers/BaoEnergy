@@ -18,14 +18,14 @@ with open(abi_file) as f:
     contract_address = json.load(f)['address']
 
 manager = ManageWeb3({
-    'link':link, 
+    'link':link,
     'abi_file':abi_file, 
-    'contract_address':abi_file, 
+    'contract_address':contract_address, 
     'private_key':private_key
     })
 
-def getTransactions(manager):
-    return manager.contract.functions.getAveragePrice().call({'from': manager.account.address}) 
+def getTransactions(manager, id):
+    return manager.contract.functions.getUserContracts(id).call({'from': manager.account.address}) 
 
 def calculateMeanPrice(transactions, id):
     df = pd.DataFrame(transactions)
@@ -54,7 +54,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return getTransactions(manager)
+@app.get("/{stateId}")
+async def root(stateId: int):
+    return getTransactions(manager, stateId)
 # passar lista como parâmetro
