@@ -5,9 +5,8 @@ import { SingleContractWriteMethods } from '../debug/_components/contract/Single
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
-import { redirect } from 'next/navigation';
 
-const addDistributor = () => {
+const AddDistributor = () => {
     const contractName = "BaoEnergy";
     const functionNameWrite = "addDistributor";
 
@@ -17,7 +16,6 @@ const addDistributor = () => {
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
         window.location.href = '/answerPropose';
-
     };
 
     const [walletConnected, setWalletConnected] = useState(isConnected);
@@ -47,4 +45,4 @@ const addDistributor = () => {
     );
 };
 
-export default addDistributor;
+export default AddDistributor;

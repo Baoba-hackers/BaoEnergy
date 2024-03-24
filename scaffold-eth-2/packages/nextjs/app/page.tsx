@@ -1,19 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import Logo from "../assets/img/Logo.png"; // Ajuste o caminho conforme necessário
+import Logo from "../assets/img/Logo.png";
 import "./style.scss";
+import Link from 'next/link';
 import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
   return (
     <>
       <div className="container">
-        {/* Inserção do logo, título e slogan */}
         <div className="hero-section">
           <div className="bao-big-section">
             <Image src={Logo} alt="BaoEnergy Logo" width={200} height={200} />
@@ -21,7 +17,6 @@ const Home: NextPage = () => {
           <h1 className="text-primary">Conheça a BaoEnergy</h1>
           <p className="hero-slogan">Negocie diretamente com fornecedores e economize na conta de energia. Entre no Mercado Livre de Energia descentralizado.</p>
         </div>
-        {/* Seção de conteúdo já existente */}
         <section className="content">
           <div className="card">
             <h2>
@@ -50,8 +45,7 @@ const Home: NextPage = () => {
             </ul>
           </div>
         </section>
-      </div> {/* Fechamento correto do container */}
-      {/* Nova seção para "Como fazemos isso?" */}
+      </div>
       <h1 className="text-primary">Como fazemos isso?</h1>
       <div className="content">
         <div className="card-how">
@@ -70,8 +64,11 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="cta">
-          <p>Pronto para explorar as possibilidades do Mercado Livre de Energia Descentralizado em nossa plataforma? Crie uma conta e faça parte dessa rede!</p>
+        <p>Pronto para explorar as possibilidades do Mercado Livre de Energia Descentralizado em nossa plataforma? Crie uma conta e faça parte dessa rede!</p>
       </div>
+      <Link href="/aboutus">
+        <div className="btn">Entrar na Aplicação</div>
+      </Link>
     </>
   );
 };
