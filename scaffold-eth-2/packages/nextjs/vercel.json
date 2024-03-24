@@ -1,5 +1,5 @@
 {
-  "installCommand": "yarn install", "rewrites": [
+  "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/"
