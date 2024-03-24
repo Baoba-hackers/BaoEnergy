@@ -1,16 +1,7 @@
-# Baobá
+# BaoEnergy
 ## by Baobá team
 
-<p align="center">
-  <a href="https://www.inteli.edu.br/">
-    <img src="./assets/imagens/inteli.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="40%" height="40%">
-  </a>
-</p>
-
-
 # Free Market Energy Marketplace Platform
-
-## BaoEnergy
 
 ## 🚀 Team Members:
 
