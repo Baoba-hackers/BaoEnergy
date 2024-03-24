@@ -20,6 +20,11 @@ BaoEnergy proposes an innovative blockchain solution to reshape access to the Fr
 
 <p> <a href="https://www.youtube.com/watch?v=z9kgMZE8R3c ">This video </a> shows the main funcionalities of our application by the energy consumer side.</p>
 
+## Deploy
+
+<p> <a href="https://baoenergy-kwk5nxcjv-baoenergy.vercel.app">Application running on vercel</a>.</p>
+
+
 ## 📁 Where to find the Sponsors' Technologies
 
 - BuidlGuidl
