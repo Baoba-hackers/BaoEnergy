@@ -1,0 +1,732 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@scroll-tech\\contracts\\libraries\\IScrollMessenger.sol": {
+      "lastModificationDate": 1711176378776,
+      "contentHash": "bebc2c1c76891fcaa824b7fd4c6316c1",
+      "sourceName": "@scroll-tech/contracts/libraries/IScrollMessenger.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "IScrollMessenger"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@scroll-tech\\contracts\\L1\\IL1ScrollMessenger.sol": {
+      "lastModificationDate": 1711176378584,
+      "contentHash": "261da32356af4f890477df3afa81c8e4",
+      "sourceName": "@scroll-tech/contracts/L1/IL1ScrollMessenger.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/IScrollMessenger.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "IL1ScrollMessenger"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@scroll-tech\\contracts\\L1\\gateways\\IL1GatewayRouter.sol": {
+      "lastModificationDate": 1711176378559,
+      "contentHash": "6f8d2bce6d699da74a78734d735f327a",
+      "sourceName": "@scroll-tech/contracts/L1/gateways/IL1GatewayRouter.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IL1ETHGateway.sol",
+        "./IL1ERC20Gateway.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "IL1GatewayRouter"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@scroll-tech\\contracts\\L1\\gateways\\IL1ETHGateway.sol": {
+      "lastModificationDate": 1711176378543,
+      "contentHash": "001c5794904c0bd2a8de4a629c535db9",
+      "sourceName": "@scroll-tech/contracts/L1/gateways/IL1ETHGateway.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "IL1ETHGateway"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@scroll-tech\\contracts\\L1\\gateways\\IL1ERC20Gateway.sol": {
+      "lastModificationDate": 1711176378518,
+      "contentHash": "43c3df1fd71d7a236d5175c20a5a59d2",
+      "sourceName": "@scroll-tech/contracts/L1/gateways/IL1ERC20Gateway.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "IL1ERC20Gateway"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\contracts\\BaoEnergy.sol": {
+      "lastModificationDate": 1711249699847,
+      "contentHash": "056e218eb50047f64d36c15c575bd051",
+      "sourceName": "contracts/BaoEnergy.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaoFunction.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "BaoEnergy"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\FunctionsClient.sol": {
+      "lastModificationDate": 1711204115444,
+      "contentHash": "03c4620e369a0fa92a95a17988313bdb",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/FunctionsClient.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IFunctionsRouter.sol",
+        "./interfaces/IFunctionsClient.sol",
+        "./libraries/FunctionsRequest.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsClient"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\libraries\\FunctionsRequest.sol": {
+      "lastModificationDate": 1711204115544,
+      "contentHash": "110e30b4e27f737239bcc2c8e2716ef0",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/libraries/FunctionsRequest.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../../vendor/solidity-cborutils/v2.0.0/CBOR.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsRequest"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\interfaces\\IFunctionsRouter.sol": {
+      "lastModificationDate": 1711204115804,
+      "contentHash": "e02e28dbe30aacda992e51136ceccf1b",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsRouter.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/FunctionsResponse.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFunctionsRouter"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\interfaces\\IFunctionsClient.sol": {
+      "lastModificationDate": 1711204115796,
+      "contentHash": "2a200f8d13068f38d2e43aba82a42762",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFunctionsClient"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\vendor\\solidity-cborutils\\v2.0.0\\CBOR.sol": {
+      "lastModificationDate": 1711204114816,
+      "contentHash": "a496b670d630b3529a54986cd1148896",
+      "sourceName": "@chainlink/contracts/src/v0.8/vendor/solidity-cborutils/v2.0.0/CBOR.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../@ensdomains/buffer/v0.1.0/Buffer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "CBOR"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\vendor\\@ensdomains\\buffer\\v0.1.0\\Buffer.sol": {
+      "lastModificationDate": 1711204114755,
+      "contentHash": "f56822d17e35b3259cbdb1318c866e20",
+      "sourceName": "@chainlink/contracts/src/v0.8/vendor/@ensdomains/buffer/v0.1.0/Buffer.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "Buffer"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\libraries\\FunctionsResponse.sol": {
+      "lastModificationDate": 1711204115552,
+      "contentHash": "dd8ae638767bbde45e92a675d9463b1b",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/libraries/FunctionsResponse.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFunctionsSubscriptions.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FunctionsResponse"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@chainlink\\contracts\\src\\v0.8\\functions\\dev\\v1_0_0\\interfaces\\IFunctionsSubscriptions.sol": {
+      "lastModificationDate": 1711204115808,
+      "contentHash": "d1774fcec528d9252300b914e898c0aa",
+      "sourceName": "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsSubscriptions.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/FunctionsResponse.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFunctionsSubscriptions"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
+      "lastModificationDate": 1711220265767,
+      "contentHash": "d6dee8024ccc60e9dff6376b20929c72",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol",
+        "./math/SignedMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1711220276980,
+      "contentHash": "d9b5aac43f10d260fdb984f7e505e606",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol": {
+      "lastModificationDate": 1711220287459,
+      "contentHash": "abdcb20f5a96af0612649ce39b29f148",
+      "sourceName": "@openzeppelin/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "SignedMath"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\contracts\\BaoStorage.sol": {
+      "lastModificationDate": 1711248949786,
+      "contentHash": "100cbbfadb89e3f1aa89ea54f730dd10",
+      "sourceName": "contracts/BaoStorage.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.2"
+      ],
+      "artifacts": [
+        "BaoStorage"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\contracts\\BaoFunction.sol": {
+      "lastModificationDate": 1711249657646,
+      "contentHash": "4cccb1e03eac2eb300de6ccb01b68824",
+      "sourceName": "contracts/BaoFunction.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/FunctionsClient.sol",
+        "@chainlink/contracts/src/v0.8/functions/dev/v1_0_0/libraries/FunctionsRequest.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "BaoFunction"
+      ]
+    },
+    "C:\\Users\\Inteli\\Downloads\\hackathon\\Baoba_HackingRio\\smart_contract\\contracts\\BaoOwnable.sol": {
+      "lastModificationDate": 1711228965899,
+      "contentHash": "cc88bdc311a2260001bad6f584028899",
+      "sourceName": "contracts/BaoOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.2"
+      ],
+      "artifacts": [
+        "BaoOwnable"
+      ]
+    }
+  }
+}
