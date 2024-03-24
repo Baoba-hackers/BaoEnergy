@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Logo } from "../assets/img/Logo.png";
+//import { Logo } from "../assets/img/Logo.png";
 import { Header } from "../components/Header";
 import "./style.scss";
 import type { NextPage } from "next";
