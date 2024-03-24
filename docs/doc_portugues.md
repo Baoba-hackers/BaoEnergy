@@ -48,7 +48,7 @@ Para atingir esses objetivos gerais, a solução em blockchain para o MLE propõ
 
 &emsp;A BaoEnergy, com sua abordagem baseada em blockchain, propõe uma reforma estrutural neste cenário. Ao desintermediar o processo de contratação de energia, elimina-se uma camada significativa de custos e complexidade, permitindo que consumidores e fornecedores interajam diretamente em um ambiente seguro e transparente. Este acesso direto não só reduzirá os custos de energia para os consumidores, mas também aumentará a competitividade do mercado, incentivando a entrada de novos fornecedores e a adoção de energias renováveis.
 
-&emsp;Além disso, a solução alinha-se com os objetivos globais de sustentabilidade, promovendo o uso de fontes de energia renováveis e apoiando a transição energética para um modelo mais limpo e verde. Em um momento em que a crise climática exige ações concretas e inovadoras, a BaoEnergy representa um passo significativo para um futuro energético mais sustentável e justo.
+&emsp;Além disso, a solução alinha-se com os objetivos globais de sustentabilidade, uma vez que a plataforma mostra qual a fonte da energia fornecida, auxiliando empresas com objetivos de usar fontes de energia renováveis e apoiando a transição energética para um modelo mais limpo e verde. Em um momento em que a crise climática exige ações concretas e inovadoras, a BaoEnergy representa um passo significativo para um futuro energético mais sustentável e justo.
 
 &emsp;Portanto, a justificativa para este projeto vai além da eficiência e economia, abraçando valores de sustentabilidade, equidade e transparência. Isso não apenas atende à demanda imediata por melhorias no MLE, mas também posiciona o setor energético brasileiro na vanguarda da inovação e da responsabilidade socioambiental. </p>
 
@@ -58,7 +58,7 @@ A BaoEnergy propõe uma solução inovadora em blockchain para reformular o aces
 
 #### Recursos e Benefícios:
 
-- **Tecnologia Avançada:** Utilizando ferramentas como ChainLink, Hardhat, Next.js, Scaffold e Scroll, a BaoEnergy oferece um sistema robusto e seguro que garante a transparência e a eficiência das transações.
+- **Tecnologia Avançada:** Utilizando ferramentas como ChainLink, Hardhat, Next.js, Scaffold e, futuramente, Scroll e Near, a BaoEnergy oferece um sistema robusto e seguro que garante a transparência e a eficiência das transações.
 - **Acesso Facilitado:** Por meio do registro do consumo energético mensal, a plataforma recomenda fornecedores adequados e exibe preços médios, facilitando a escolha dos consumidores.
 - **Custos Reduzidos:** A eliminação de intermediários no processo de contratação no MLE permite uma economia significativa nas taxas, tornando a energia mais acessível para todos.
 - **Transparência Total:** Com todas as transações registradas na blockchain, garantimos um sistema imutável e transparente, onde a origem e o tipo de energia são claramente informados.
@@ -70,7 +70,7 @@ A proposta da BaoEnergy não é apenas tecnologicamente avançada, mas também a
 
 ### 3.1 Contexto da Indústria
 
-&emsp; No Brasil, o Mercado Livre de Energia (MLE) está em um ponto crucial de transformação, oferecendo uma alternativa ao mercado regulado, onde consumidores de grande porte podem negociar energia diretamente com fornecedores, buscando condições mais vantajosas e flexíveis. Apesar de seu potencial para aumentar a competitividade e a eficiência, o MLE enfrenta desafios como a necessidade de maior transparência, inclusão e inovação tecnológica.
+&emsp; No Brasil, o Mercado Livre de Energia (MLE) está em um ponto crucial de transformação, oferecendo uma alternativa ao mercado regular, onde consumidores de grande porte podem negociar energia diretamente com fornecedores, buscando condições mais vantajosas e flexíveis. Foi estimado para 2024 um crescimento de 54% em relação às 37,6 mil unidades consumidoras registradas na CCEE ao fim de novembro de 2023. Apesar de seu potencial para aumentar a competitividade e a eficiência, o MLE enfrenta desafios como a necessidade de maior transparência, inclusão e inovação tecnológica.
 
 &emsp; A adoção de tecnologias disruptivas, como a blockchain, promete revolucionar este mercado, oferecendo processos mais eficientes, custos reduzidos, e uma transparência e confiabilidade aprimoradas nas transações. O crescente enfoque em práticas de ESG (Ambiental, Social e Governança) também está moldando o mercado, exigindo estratégias que alinhem o crescimento econômico com a sustentabilidade ambiental.
 
@@ -78,7 +78,60 @@ A proposta da BaoEnergy não é apenas tecnologicamente avançada, mas também a
 
 ### 3.2 Análise das 5 Forças de Porter
 
+&emsp; A análise das 5 Forças de Porter é uma ferramenta útil para entender a dinâmica competitiva de um setor ou mercado específico. Vamos aplicá-la ao contexto do Mercado Livre de Energia (MLE) no Brasil, considerando a proposta da BaoEnergy e seu impacto potencial:
+
+### 1. Rivalidade entre os concorrentes existentes:
+
+- **Baixa:** Atualmente, o MLE no Brasil é dominado por algumas grandes empresas de energia, mas a entrada de novos participantes é relativamente fácil devido à regulamentação que permite a negociação direta entre consumidores e fornecedores. Com a introdução da BaoEnergy, que propõe uma plataforma descentralizada e transparente baseada em blockchain, a concorrência pode intensificar-se à medida que novos fornecedores são incentivados a entrar no mercado. No entanto, a abordagem inovadora da BaoEnergy pode diferenciá-la o suficiente para reduzir a rivalidade direta.
+
+### 2. Poder de barganha dos fornecedores:
+
+- **Moderado a Baixo:** Com a introdução de uma plataforma como a BaoEnergy, que promove a negociação direta entre consumidores e fornecedores, o poder de barganha dos fornecedores pode diminuir. Isso ocorre porque a plataforma oferece um ambiente onde os fornecedores competem mais diretamente entre si, reduzindo a dependência dos consumidores em fornecedores específicos e aumentando a transparência nos preços.
+
+### 3. Poder de barganha dos compradores:
+
+- **Alto:** Os compradores (consumidores e empresas) no MLE geralmente têm um alto poder de barganha devido à possibilidade de negociar diretamente com os fornecedores. Com a introdução da BaoEnergy, que visa aumentar ainda mais a transparência e facilitar a negociação direta, esse poder de barganha pode aumentar ainda mais, já que os consumidores terão acesso a mais informações e opções para escolher.
+
+### 4. Ameaça de novos entrantes:
+
+- **Moderada:** A entrada no mercado de energia é regulamentada, mas o MLE brasileiro permite a entrada de novos participantes, especialmente com propostas inovadoras como a BaoEnergy. No entanto, a necessidade de capital inicial e a complexidade tecnológica podem representar barreiras significativas para novos entrantes. A reputação estabelecida das grandes empresas de energia também pode representar uma barreira para novos participantes.
+
+### 5. Ameaça de produtos ou serviços substitutos:
+
+- **Baixa:** No contexto do MLE, os produtos ou serviços substitutos são limitados, pois a energia é uma necessidade básica e não há alternativas diretas para a eletricidade no mercado. No entanto, a ameaça pode surgir de mudanças regulatórias que possam impactar a viabilidade do MLE como um todo.
+
+### Conclusão:
+
+&emsp; A introdução da BaoEnergy no Mercado Livre de Energia (MLE) brasileiro tem o potencial de alterar significativamente a dinâmica competitiva do setor. Ao promover a transparência, reduzir as barreiras à entrada e facilitar a negociação direta entre consumidores e fornecedores, a plataforma pode aumentar a competição e beneficiar os consumidores. No entanto, desafios como a necessidade de construir confiança no novo modelo e superar a resistência das empresas estabelecidas podem influenciar a intensidade da competição no mercado.
+
 ### 3.3 Análise SWOT
+
+&emsp; A análise SWOT (Strengths, Weaknesses, Opportunities, Threats) é uma ferramenta útil para entender as forças, fraquezas, oportunidades e ameaças de um projeto, produto ou empresa. Vamos realizar uma análise SWOT para a proposta da BaoEnergy no contexto do Mercado Livre de Energia (MLE) no Brasil:
+
+### Forças (Strengths):
+1. **Tecnologia Avançada:** Utilização de tecnologias de ponta como blockchain para garantir segurança, transparência e eficiência nas transações.
+2. **Desintermediação:** Remoção de intermediários no processo de contratação de energia, o que reduz custos e complexidade para consumidores e fornecedores.
+3. **Redução de Custos:** Diminuição significativa dos custos associados à contratação de fornecedores de energia, tornando o mercado mais acessível.
+4. **Promoção da Sustentabilidade:** Incentivo ao uso de energia renovável, alinhando-se com as tendências globais de sustentabilidade e responsabilidade ambiental.
+5. **Transparência:** Registro de todas as transações na blockchain, garantindo um sistema imutável e transparente.
+
+### Fraquezas (Weaknesses):
+1. **Complexidade Tecnológica:** A adoção de tecnologias como blockchain pode ser complexa para alguns usuários e empresas, exigindo um período de adaptação.
+2. **Dependência da Adoção:** O sucesso da plataforma depende da adoção em larga escala por consumidores e fornecedores, o que pode ser desafiador inicialmente.
+3. **Requer Conexão à Internet:** A utilização da plataforma pode ser limitada em áreas com acesso limitado à internet, excluindo potenciais usuários.
+
+### Oportunidades (Opportunities):
+1. **Mercado em Crescimento:** O Mercado Livre de Energia no Brasil está em expansão, oferecendo oportunidades para novos players e inovações tecnológicas.
+2. **Consciência Ambiental:** A crescente preocupação com questões ambientais pode aumentar a demanda por energia renovável, beneficiando a proposta da BaoEnergy.
+3. **Regulamentação Favorável:** Mudanças regulatórias que promovam a transparência e a competição no mercado de energia podem impulsionar a adoção de soluções como a BaoEnergy.
+
+### Ameaças (Threats):
+1. **Concorrência Estabelecida:** Grandes empresas de energia já estabelecidas podem ver a proposta da BaoEnergy como uma ameaça e buscar formas de manter sua posição dominante no mercado.
+2. **Resistência à Mudança:** Consumidores e empresas podem resistir à adoção de novas tecnologias e modelos de negócios, especialmente se já estiverem satisfeitos com seus fornecedores atuais.
+3. **Instabilidade Regulatória:** Mudanças frequentes nas políticas e regulamentações do setor de energia podem impactar a viabilidade e estabilidade da plataforma.
+
+### Conclusão:
+&emsp; A análise SWOT mostra que a proposta da BaoEnergy possui diversas forças e oportunidades que podem impulsionar seu sucesso no Mercado Livre de Energia. No entanto, é importante estar ciente das fraquezas e ameaças, e desenvolver estratégias para mitigar esses desafios. Com uma abordagem estratégica e adaptativa, a BaoEnergy pode posicionar-se de forma competitiva e contribuir significativamente para a transformação do mercado de energia no Brasil.
 
 ### 3.5 Personas & User Stories 
 
