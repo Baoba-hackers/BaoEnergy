@@ -29,6 +29,7 @@
     "next:format": "yarn workspace @se-2/nextjs format",
     "next:check-types": "yarn workspace @se-2/nextjs check-types",
     "next:build": "yarn workspace @se-2/nextjs build",
+    "build": "yarn next:build",
     "postinstall": "husky install",
     "precommit": "lint-staged",
     "vercel": "yarn workspace @se-2/nextjs vercel",
@@ -36,11 +37,18 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18",
+    "lint-staged": "^13.0.3",
+    "sass": "^1.72.0"
   },
   "dependencies": {
     "@chainlink/contracts": "^0.8.0",
-    "sass": "^1.72.0"
+    "husky": "^9.0.11",
+    "isomorphic-ws": "^5.0.0",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vercel": "^33.6.1"
   }
 }

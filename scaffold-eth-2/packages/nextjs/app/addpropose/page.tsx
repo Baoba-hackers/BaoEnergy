@@ -9,14 +9,14 @@ import { redirect } from 'next/navigation';
 
 const answerProposal = () => {
     const contractName = "BaoEnergy";
-    const functionNameWrite = "answerPropose";
+    const functionNameWrite = "addPropose";
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
     const { isConnected } = useAccount();
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/meanprice';
+        window.location.href = '/home';
 
     };
 
@@ -43,6 +43,7 @@ const answerProposal = () => {
                     functionName={functionNameWrite}
                 />
             )}
+            
         </div>
     );
 };

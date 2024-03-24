@@ -16,7 +16,7 @@ const addDistributor = () => {
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/getProposals';
+        window.location.href = '/answerPropose';
 
     };
 
