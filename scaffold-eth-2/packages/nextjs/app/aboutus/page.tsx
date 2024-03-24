@@ -30,7 +30,9 @@ const EscolhaPerfil = () => {
                     height={300}
                 />
                 <h2>Como fornecedor, desejo oferecer meu serviço de forma eficiente para ampliar minha margem de lucro.</h2>
-                <div className="btn">Fornecedor</div>
+                <Link href="/addDistributor">
+                    <div className="btn">Fornecedor</div>
+                </Link>
             </div>
         </div>
     );
