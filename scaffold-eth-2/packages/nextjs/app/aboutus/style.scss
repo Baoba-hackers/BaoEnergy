@@ -2,37 +2,57 @@
     display: flex;
     margin: auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
 
     .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         width: 30%;
-        height: 70vh;
-
+        min-height: 70vh;
         padding: 1rem;
-        :hover {
-            background: #5901fc;
-        }
-
-        Image{
-            margin: auto;
-            width: 30%;
-        }
-
-        border: .7px solid #27A6DB;
-        padding: 2rem;
+        margin: 1rem;
+        box-sizing: border-box;
         border-radius: 15px;
+        border: .2px solid #27A6DB;
 
+        &:hover {
+            transition: ease-in .3s;
+            background-color: #bb96ff41;
+            cursor: pointer;
+        }
+
+        .image-container {
+            width: 100%;
+            position: relative;
+            height: auto;
+        }
 
         h2 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.25rem;
             font-weight: 500;
+            color: #333;
+            margin-top: 1rem;
         }
 
         .btn {
-            margin-left: auto;
-            margin-right: auto;
+            background-color: #27A6DB;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(#27A6DB, 10%);
+            }
         }
     }
 }

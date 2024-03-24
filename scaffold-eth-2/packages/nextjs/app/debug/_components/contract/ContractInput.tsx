@@ -21,16 +21,31 @@ type ContractInputProps = {
   paramType: AbiParameter;
 };
 
-/**
- * Generic Input component to handle input's based on their function param type
- */
+const getPortugueseDescription = (paramType: AbiParameter) => {
+  const typeDescriptions = {
+    address: 'Endereço de Carteira',
+    bytes32: 'Sequência de 32 Bytes',
+    bytes: 'Sequência de Bytes',
+    string: 'Texto',
+    bool: 'Verdadeiro ou Falso',
+    uint256: 'Número Inteiro sem Sinal',
+    int256: 'Número Inteiro com Sinal',
+    // Adicione mais tipos e descrições conforme necessário
+  };
+
+  return typeDescriptions[paramType.type] || paramType.type;
+};
+
+
 export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: ContractInputProps) => {
+  const placeholder = paramType.name ? `Insira o valor para ${getPortugueseDescription(paramType)}` : `Insira o valor`;
+
   const inputProps = {
     name: stateObjectKey,
     value: form?.[stateObjectKey],
-    placeholder: paramType.name ? `${paramType.type} ${paramType.name}` : paramType.type,
+    placeholder: placeholder,
     onChange: (value: any) => {
-      setForm(form => ({ ...form, [stateObjectKey]: value }));
+      setForm((form) => ({ ...form, [stateObjectKey]: value }));
     },
   };
 
@@ -44,6 +59,8 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
         return <BytesInput {...inputProps} />;
       case "string":
         return <InputBase {...inputProps} />;
+      case "bool":
+        return <InputBase {...inputProps} type="checkbox" />;
       case "tuple":
         return (
           <Tuple
@@ -53,9 +70,9 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
             parentStateObjectKey={stateObjectKey}
           />
         );
+      // Adiciona tratamento para outros tipos, como inteiros e arrays de tuplas
       default:
-        // Handling 'int' types and 'tuple[]' types
-        if (paramType.type.includes("int") && !paramType.type.includes("[")) {
+        if (paramType.type.includes("int")) {
           return <IntegerInput {...inputProps} variant={paramType.type as IntegerVariant} />;
         } else if (paramType.type.startsWith("tuple[")) {
           return (
@@ -75,8 +92,11 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
   return (
     <div className="flex flex-col gap-1.5 w-full">
       <div className="flex items-center ml-2">
-        {paramType.name && <span className="text-xs font-medium mr-2 leading-none">{paramType.name}</span>}
-        <span className="block text-xs font-extralight leading-none">{paramType.type}</span>
+        <span className="text-xs font-medium mr-2 leading-none">
+          {paramType.name
+            ? `${paramType.name.replace(/^_/, '')} (${getPortugueseDescription(paramType)})`
+            : getPortugueseDescription(paramType)}
+        </span>
       </div>
       {renderInput()}
     </div>
