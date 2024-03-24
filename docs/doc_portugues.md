@@ -30,15 +30,15 @@
 
 ### 2.1 Objetivos Gerais
 
-A solução em blockchain para o Mercado Livre de Energia (MLE) tem o objetivo geral de desburocratizar e democratizar o acesso à energia, visando um mercado mais competitivo, transparente e eficiente. Essa iniciativa busca facilitar a entrada de novos consumidores e empresas no MLE, minimizando as barreiras e os custos de transação. Além disso, almeja promover a negociação direta entre consumidores e fornecedores de energia, removendo intermediários e garantindo segurança e transparência nas transações por meio da tecnologia blockchain. O sistema proposto é descentralizado e autônomo, reduzindo os custos de energia para os consumidores e aumentando a competitividade do mercado ao incentivar a entrada de novos fornecedores. A promoção da sustentabilidade energética, por meio do incentivo à geração e ao consumo de energia renovável, também está entre os principais objetivos da plataforma.
+A solução em blockchain para o Mercado Livre de Energia (MLE) tem o objetivo geral de desburocratizar e democratizar o acesso à energia, visando um mercado mais competitivo, transparente e eficiente. Essa iniciativa busca facilitar a entrada de novos consumidores e empresas no MLE, minimizando as barreiras e os custos de transação. Além disso, almeja promover a negociação direta entre consumidores e fornecedores de energia, removendo intermediários e garantindo segurança e transparência nas transações por meio da tecnologia blockchain. O sistema proposto é descentralizado e autônomo, reduzindo os custos de energia para os consumidores e aumentando a competitividade do mercado ao incentivar a entrada de novos fornecedores. A promoção da sustentabilidade energética, por meio do incentivo ao consumo de energia renovável, também está entre os principais objetivos da plataforma.
 
 ### 2.2 Objetivos Específicos
 
 Para atingir esses objetivos gerais, a solução em blockchain para o MLE propõe-se a:
 
 1. **Facilitar o acesso dos consumidores ao MLE:** Os consumidores poderão registrar seu consumo energético mensal na plataforma, que então recomendará os fornecedores adequados às suas necessidades e exibirá o preço médio dos planos de energia correspondentes. Isso facilitará a comparação de opções e fornecerá um processo de compra simplificado e eficiente.
-2. **Reduzir os custos de energia para os consumidores:** A plataforma eliminará intermediários, reduzindo as taxas cobradas e permitindo negociações diretas para melhores preços e condições. Além disso, oferecerá ferramentas para otimizar o consumo de energia e diminuir as contas de luz.
-3. **Promover a transparência no mercado de energia:** Todas as transações serão registradas na blockchain, assegurando um registro público e imutável, e fornecendo informações detalhadas sobre a origem e tipo de energia consumida, além de permitir a avaliação do desempenho dos fornecedores.
+2. **Reduzir os custos de energia para os consumidores:** A plataforma eliminará intermediários, reduzindo as taxas cobradas e permitindo negociações diretas para melhores preços e condições.
+3. **Promover a transparência no mercado de energia:** Todas as transações serão registradas na blockchain, assegurando um registro imutável e fornecendo informações detalhadas sobre a origem e tipo de energia consumida, além de permitir a avaliação do desempenho dos fornecedores.
 4. **Aumentar a competitividade do mercado de energia:** A solução incentivará a entrada de novos fornecedores e a diversificação da matriz energética, fomentando a geração e o consumo de energia renovável, o que contribuirá para um mercado mais competitivo.
 5. **Incentivar a sustentabilidade energética:** A plataforma promoverá o uso de energia renovável por meio de tarifas especiais e incentivos, educando os consumidores sobre seus benefícios e fomentando práticas de consumo consciente para reduzir o impacto ambiental.
 
@@ -80,9 +80,61 @@ A proposta da BaoEnergy não é apenas tecnologicamente avançada, mas também a
 
 ### 3.3 Análise SWOT
 
-### 3.4 Value Proposition Canvas
-
 ### 3.5 Personas & User Stories 
+
+&emsp; Tanto as personas quanto as user stories desempenham papéis cruciais na construção de um MVP (Minimum Viable Product - Produto Mínimo Viável). As personas fornecem uma compreensão profunda dos usuários-alvo, ajudando as equipes de desenvolvimento a focar nos recursos e funcionalidades mais relevantes e significativas para esses usuários. Isso é essencial para garantir que o MVP atenda às necessidades reais do mercado e dos clientes desde o início.
+
+&emsp; Por sua vez, as user stories detalham as funcionalidades específicas do produto a partir da perspectiva do usuário, o que é fundamental para o processo de desenvolvimento ágil. Elas orientam a equipe na priorização das tarefas e na definição do escopo do MVP, permitindo que o desenvolvimento ocorra de maneira iterativa e focada nas necessidades do usuário.
+
+&emsp; Portanto, tanto as personas quanto as user stories desempenham um papel crucial na identificação, definição e priorização dos requisitos do MVP, garantindo que ele seja viável, centrado no usuário e capaz de entregar valor desde o lançamento inicial. Por isso, foram criadas duas personas que delimitam os público-alvos da nossa solução, sendo uma delas uma Gerente de uma empresa de distribuição de energia, atuante no Mercado Livre de Energia (MLE), e a outra um  de um Diretor de Facilities de uma empresa que contrata energia através do MLE.
+</p>
+
+
+<p align="center">
+<br>
+Figura 03 - Persona Consumidor <br>
+<img src="../assets/imagens/persona-distribuidor.png" style="display: block; margin: auto;"></img>
+Fonte: Elaborado pelos autores.
+</p>
+
+<p align="center">
+<br>
+Figura 04 - Persona Distribuidor <br>
+<img src="../assets/imagens/persona-consumidor.png" style="display: block; margin: auto;"></img>
+Fonte: Elaborado pelos autores.
+</p>
+
+### 3.5 Value Proposition Canvas
+
+&emsp; O Value Proposition Canvas é uma ferramenta estratégica usada para desenvolver e analisar a proposta de valor de um produto ou serviço. Criado por Alex Osterwalder, o canvas ajuda a garantir que a oferta de uma empresa esteja alinhada com as expectativas e as necessidades dos clientes.
+
+&emsp; O canvas é dividido em duas partes principais: o perfil do cliente e a proposta de valor. O perfil do cliente é focado em entender os trabalhos que o cliente precisa realizar, as dores que eles querem aliviar e os ganhos que eles buscam atingir. De outro lado, a proposta de valor concentra-se nos produtos e serviços que uma empresa oferece, destacando como eles aliviam as dores do cliente e criam os ganhos desejados. Tendo isto em mente, foram construídos dois Canvas da Proposta de Valor que visam demonstrar o valor gerado para as duas personas do projeto. O primeiro destes demonstra o valor agregado ao consumidor, enquanto o segundo, ao distribuidor de energia do Mercado Livre de Energia.</p>
+
+
+<p align="center">
+<br>
+Figura 01 - Value Proposition Canvas - Persona Consumidor <br>
+<img src="../assets/imagens/vpc-consumidor.png" style="display: block; margin: auto;"></img>
+Fonte: Elaborado pelos autores.
+</p>
+
+<p align="center">
+<br>
+Figura 02 - Value Proposition Canvas - Persona Distribuidor <br>
+<img src="../assets/imagens/vpc-distribuidor.png" style="display: block; margin: auto;"></img>
+Fonte: Elaborado pelos autores.
+</p>
+
+&emsp; Tendo em vista os Canvas acima apresentados, torna-se notório que a BaoEnergy apresenta uma proposta inovadora para o Mercado Livre de Energia (MLE) no Brasil, com uma plataforma blockchain que promove a conexão direta entre consumidores e fornecedores de energia. Esta solução busca eliminar intermediários, tornando o processo mais eficiente e econômico. A ênfase na transparência dos preços e a presença de indicadores de energia renovável destacam o compromisso com a sustentabilidade e práticas de ESG.
+
+&emsp; A plataforma permite que os consumidores registrem seu consumo energético e recebam recomendações personalizadas de fornecedores, juntamente com informações sobre o preço médio do kWh, facilitando a tomada de decisões de compra com base em dados concretos. Além disso, a possibilidade de usar o DREX para pagamentos simplifica ainda mais o processo, evitando taxas bancárias adicionais.
+
+&emsp; A BaoEnergy mira tanto nos ganhos quantificáveis, como redução de custos e aumento da eficiência nas vendas, quanto nos benefícios intangíveis, como a melhoria da percepção do mercado e a facilidade de acesso a energia limpa. Ao mesmo tempo, a solução visa aliviar as dores comuns dos participantes do MLE, como os altos custos operacionais e a complexidade na negociação e contratação de energia.
+
+&emsp; Em resumo, a BaoEnergy se posiciona como um agente de mudança no MLE brasileiro, oferecendo uma solução que não apenas melhora a eficiência e transparência do mercado, mas também o alinha com as exigências contemporâneas de sustentabilidade e responsabilidade corporativa.</p>
+
+
+
 
 ### 3.6 Regras de Negócios
 
@@ -96,5 +148,6 @@ A proposta da BaoEnergy não é apenas tecnologicamente avançada, mas também a
 
 ## <a name="c5"></a>5. Conclusões e Próximos Passos
 
+Tendo em vista o projeto apresentado acima, 
+
 ## <a name="c6"></a>6. Referências
-[1]TCU (Tribunal de Contas da União). Relatório de Gestão [online]. Disponível em: <https://portal.tcu.gov.br/contas/contas-e-relatorios-de-gestao/prestacao-de-contas/relatorio-de-gestao.htm>. Acesso em: [coloque a data de acesso aqui, no formato dia/mês/ano].
