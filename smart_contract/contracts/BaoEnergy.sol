@@ -23,16 +23,6 @@ contract BaoEnergy is BaoFunction {
         bool active;
     }
 
-    //Define real user contracts
-    struct UserContract{
-        uint256 energyConsume;
-        uint256 pricePerMonth;
-        uint256 timeStamp;
-        uint256 localId;
-        bool active;
-        uint256 contractDeadLine;
-    }
-
     //Define the struct of Propose
     struct Propose{
         UserContract userContract;
@@ -79,12 +69,6 @@ contract BaoEnergy is BaoFunction {
 
     //Define the mapping of Distributor
     mapping(address => Distributor) public distributors;
-
-    //Define the mapping for consumer to userCOntract
-    mapping(address => UserContract) public consumerToUserContract;
-
-    //Define the mapping to store the mapping of Propose by localId
-    mapping(uint256 => UserContract[]) public localToContract;
 
     //Define the function of registerConsumer
     function registerConsumer(uint256 _cnpj, uint256 _localId, bool _isMemberOfFreeEnergyMarket) public {
