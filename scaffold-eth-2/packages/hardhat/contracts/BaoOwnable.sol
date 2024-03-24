@@ -7,9 +7,4 @@ contract BaoOwnable {
     constructor(address _owner) {
         owner = _owner;
     }
-
-    modifier onlyOwner() {
-        require(owner == msg.sender, "apenas o dono do contrato pode realizar isso");
-        _;
-    }
 }

@@ -31,18 +31,6 @@ contract BaoEnergy is BaoFunction {
         bool answered;
     }
 
-    //Define the modifier of onlyConsumer
-    modifier onlyConsumer(){
-        require(consumers[msg.sender].active, "Voce nao e um consumidor");
-        _;
-    }
-
-    //Define the modifier of onlyDistributor
-    modifier onlyDistributor(){
-        require(distributors[msg.sender].active, "Voce nao e um distribuidor");
-        _;
-    }
-
     //Define the event of newConsumerRegistered
     event newConsumerRegistered(address indexed consumer);
 
@@ -83,7 +71,7 @@ contract BaoEnergy is BaoFunction {
         return localIdToDistributors[_localId];
     }
 
-    function addPropose(uint256 _energyConsume, uint256 _pricePerMonth, address _distributor, uint256 _localId) onlyConsumer public{
+    function addPropose(uint256 _energyConsume, uint256 _pricePerMonth, address _distributor, uint256 _localId)  public{
         //Checks if the _distributor is a distributor
         require(distributors[_distributor].active, "O endereco passado nao e um distribuidor");
         UserContract memory newUserContract = UserContract(_energyConsume, _pricePerMonth, block.timestamp, _localId, true, block.timestamp + 30 days);
@@ -104,7 +92,7 @@ contract BaoEnergy is BaoFunction {
         emit newDistributorAdded(msg.sender);
     }
 
-    function answerPropose(uint256 _id, bool _decision) onlyDistributor public{
+    function answerPropose(uint256 _id, bool _decision)  public{
         //Get the propose by the id
         Propose storage propose = proposes[msg.sender][_id];
         //Require that the msg.sender is the distributor of the propose
