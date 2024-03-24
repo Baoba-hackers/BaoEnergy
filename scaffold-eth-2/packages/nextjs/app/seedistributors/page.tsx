@@ -6,7 +6,7 @@ import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedCon
 
 const Index = () => {
     const contractName = "BaoEnergy";
-    const functionName = "bestOptions"; 
+    const functionName = "getProposes"; 
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
 

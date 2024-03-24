@@ -5,18 +5,17 @@ import { SingleContractWriteMethods } from '../debug/_components/contract/Single
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 import { useAccount } from 'wagmi';
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
-import { redirect } from 'next/navigation';
 
-const answerProposal = () => {
+const RegisterConsumer = () => {
     const contractName = "BaoEnergy";
-    const functionNameWrite = "answerProposal";
+    const functionNameWrite = "answerPropose";
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
     const { isConnected } = useAccount();
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/getProposals';
+        window.location.href = "/home"
 
     };
 
@@ -47,4 +46,4 @@ const answerProposal = () => {
     );
 };
 
-export default answerProposal;
+export default RegisterConsumer;

@@ -1,12 +1,11 @@
 "use client";
-
-import React from 'react';
-import { SingleContractReadMethods } from '../debug/_components/contract/SingleContractReadMethods';
+import React from "react";
+import { SingleContractReadMethods } from "../debug/_components/contract/SingleContractReadMethods";
 import { useDeployedContractInfo } from "../../hooks/scaffold-eth/useDeployedContractInfo";
 
 const Index = () => {
     const contractName = "BaoEnergy";
-    const functionName = "proposes"; 
+    const functionName = "getProposes"; 
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
 
