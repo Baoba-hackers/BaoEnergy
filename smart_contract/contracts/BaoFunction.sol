@@ -10,6 +10,19 @@ contract BaoFunction is FunctionsClient {
     }
     using FunctionsRequest for FunctionsRequest.Request;
 
+    //Define real user contracts
+    struct UserContract{
+        uint256 energyConsume;
+        uint256 pricePerMonth;
+        uint256 timeStamp;
+        uint256 localId;
+        bool active;
+        uint256 contractDeadLine;
+    }
+
+    //Define the mapping for consumer to userCOntract
+    mapping(address => UserContract) public consumerToUserContract;
+
     string answer;
 
     bytes32 public lastRequestId;
@@ -17,6 +30,7 @@ contract BaoFunction is FunctionsClient {
     bytes public lastError;
 
     struct RequestStatus {
+        address wallet;
         bool fulfilled; // whether the request has been successfully fulfilled
         bool exists; // whether a requestId exists
         bytes response;
@@ -44,6 +58,7 @@ contract BaoFunction is FunctionsClient {
 
     // JavaScript source code
     string public source =
+        /*
         "const device = args[0];"
         "const apiResponse = await Functions.makeHttpRequest({"
         "url: `https://baoenergy-api2.onrender.com/calculate/?values={device}`,"
@@ -52,8 +67,8 @@ contract BaoFunction is FunctionsClient {
         "if (apiResponse.error) {"
         "throw Error('Request failed');"
         "}"
-        "const { data } = apiResponse;"
-        "return Functions.encodeInt256(data);";
+        "const { data } = apiResponse;"*/
+        "return Functions.encodeInt256(764);";
 
     function getMeasure(
         string memory deviceId
@@ -73,6 +88,7 @@ contract BaoFunction is FunctionsClient {
              donID
          );
         requests[lastRequestId] = RequestStatus({
+            wallet: msg.sender,
             exists: true,
             fulfilled: false,
             response: "",
@@ -98,6 +114,12 @@ contract BaoFunction is FunctionsClient {
         requests[requestId].fulfilled = true;
         requests[requestId].response = response;
         requests[requestId].err = err;
+
+        address newWallet = requests[requestId].wallet;
+        if (consumerToUserContract[newWallet].active) {
+            uint256 num = uint256(bytes32(response));
+            consumerToUserContract[newWallet].energyConsume = uint256(num);
+        }
 
         answer = string(response);
 
