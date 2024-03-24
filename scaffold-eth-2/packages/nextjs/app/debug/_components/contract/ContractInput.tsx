@@ -22,7 +22,7 @@ type ContractInputProps = {
 };
 
 const getPortugueseDescription = (paramType: AbiParameter) => {
-  const typeDescriptions = {
+  const typeDescriptions: { [key: string]: string } = {
     address: 'Endereço de Carteira',
     bytes32: 'Sequência de 32 Bytes',
     bytes: 'Sequência de Bytes',
@@ -60,7 +60,7 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
       case "string":
         return <InputBase {...inputProps} />;
       case "bool":
-        return <InputBase {...inputProps} type="checkbox" />;
+        return <InputBase {...inputProps} />;
       case "tuple":
         return (
           <Tuple
@@ -70,7 +70,6 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
             parentStateObjectKey={stateObjectKey}
           />
         );
-      // Adiciona tratamento para outros tipos, como inteiros e arrays de tuplas
       default:
         if (paramType.type.includes("int")) {
           return <IntegerInput {...inputProps} variant={paramType.type as IntegerVariant} />;

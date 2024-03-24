@@ -1,0 +1,44 @@
+// Definição das variáveis SCSS
+$cor-primaria: #004F71;
+$cor-secundaria: #ffffff;
+
+// Estilos gerais da página
+body, html {
+  font-family: 'Arial', sans-serif;
+  background-color: $cor-secundaria;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.page-container {
+  min-height: 100%;
+  padding-top: 20px; // Espaço para o cabeçalho
+}
+
+.header {
+  // ... seus estilos de cabeçalho existentes
+}
+
+// Estilo do contêiner do conteúdo principal
+.content-container {
+  display: flex;
+  justify-content: center; // Centraliza o conteúdo
+  padding: 20px;
+
+  // Contêiner para o gráfico
+  .graph-container {
+    flex: 1; // Permite que o gráfico cresça e use espaço disponível
+    padding-right: 10px; // Espaço entre o gráfico e os dados do item
+  }
+  
+  // Estilo dos dados do item
+  .data-item {
+    flex: 1; // Permite que os dados do item cresçam e usem o espaço disponível
+    background-color: $cor-secundaria;
+    border: 1px solid $cor-primaria;
+    padding: 20px;
+    margin-left: 10px; // Espaço entre os dados do item e o gráfico
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); // Sombra opcional para destaque
+  }
+}

@@ -1,59 +1,109 @@
-h1{
-    font-size: 5rem;
-    font-weight: 600;
+h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+.bao-big-section{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 .container {
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .header {
+}
+
+.hero-section {
+    margin-top: 2rem;
+}
+
+.header {
     margin-bottom: 2rem;
-  
-    .logo-container {
-      // adicione o seu estilo específico aqui
-    }
-  
-    .logo {
-      max-width: 100%;
-      height: auto;
-      // outros estilos como margin, etc.
-    }
-  
-    .title {
-      // estilo do título
-    }
-  }
-  
-  .content {
+}
+
+.title {
+// estilo do título
+}
+
+.content {
     display: flex;
     justify-content: center;
     gap: 2rem;
-  
+    margin: auto;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: center;
+
     .card {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 45%; // ou um tamanho fixo dependendo do layout
-  
-      h2 {
-        font-size: 1.5rem;
-        // estilos adicionais para o subtítulo
-      }
-  
-      .benefits {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-  
-        li {
-          margin-bottom: 0.5rem;
-          // outros estilos como font-size, etc.
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 45%; // ou um tamanho fixo dependendo do layout
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
-      }
+
+        .benefits {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+        }
     }
-  }
-  
+    .card-how {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 45%; // ou um tamanho fixo dependendo do layout
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+    .how-we-do-section {
+    text-align: center;
+    margin-top: 3rem;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature {
+        background: #ffffff;
+        padding: 2rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+
+        h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        }
+
+        p {
+        font-size: 1rem;
+        line-height: 1.5;
+        }
+    }
+
+    .cta {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}  

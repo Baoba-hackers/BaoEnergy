@@ -8,14 +8,14 @@ import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 const AnswerProposal = () => {
     const contractName = "BaoEnergy";
-    const functionNameWrite = "answerPropose";
+    const functionNameWrite = "addPropose";
 
     const { data: deployedContractData } = useDeployedContractInfo(contractName);
     const { isConnected } = useAccount();
 
     const handleWriteSubmit = () => {
         console.log('Operação sucedida');
-        window.location.href = '/meanprice';
+        window.location.href = '/home';
     };
 
     const [walletConnected, setWalletConnected] = useState(isConnected);
@@ -26,8 +26,8 @@ const AnswerProposal = () => {
 
     return (
         <div className="flex flex-col justify-center items-center h-screen">
-            <h2 className="text-primary">Responder propostas enviadas</h2>
-            <h4>Selecione e responda as propostas enviadas</h4>
+            <h2 className="text-primary">Consumidor, faça o seu registro</h2>
+            <h4>Solicitamos informações específicas no cadastro de novos usuários para garantir transparência e eficiência em nossas operações.</h4>
             {!walletConnected && (
                 <>
                     <p>Conecte sua carteira para começar</p>
@@ -41,9 +41,6 @@ const AnswerProposal = () => {
                     functionName={functionNameWrite}
                 />
             )}
-            <Link href="/home">
-                <p className="text-primary">Home</p>
-            </Link>
         </div>
     );
 };
