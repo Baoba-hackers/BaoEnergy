@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@chainlink/contracts": "^0.8.0",
+    "isomorphic-ws": "^5.0.0",
     "sass": "^1.72.0"
   }
 }
