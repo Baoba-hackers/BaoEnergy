@@ -8,8 +8,6 @@ contract BaoFunction is FunctionsClient {
     constructor(uint64 functionsSubscriptionId) FunctionsClient(router) {
         subscriptionId = functionsSubscriptionId;      
     }
-
-
     using FunctionsRequest for FunctionsRequest.Request;
 
     string answer;
@@ -46,55 +44,34 @@ contract BaoFunction is FunctionsClient {
 
     // JavaScript source code
     string public source =
-        "const energyContracts = args[0];"
+        "const device = args[0];"
         "const apiResponse = await Functions.makeHttpRequest({"
-        "url: `https://baoenergy-api2.onrender.com/calculate/?values={energyContracts}`,"
+        "url: `https://baoenergy-api2.onrender.com/calculate/?values={device}`,"
         "responseType: 'text'"
         "});"
         "if (apiResponse.error) {"
         "throw Error('Request failed');"
         "}"
         "const { data } = apiResponse;"
-        "let newData = JSON.stringify(data)"
-        "return Functions.encodeString(newData);";
+        "return Functions.encodeInt256(data);";
 
-    function getAllMeanPrice(
-        uint256 _localId
+    function getMeasure(
+        string memory deviceId
     ) external returns (bytes32) {
-        /*
-        UserContract[] memory localsStruct = localToContract[_localId];
-        string[] memory contracts;
-        for(uint256 i = 0; i < localsStruct.length; i++) {
-            contracts[i] = 
-            concatenateStrings(
-                concatenateStrings(
-                    concatenateStrings(
-                        concatenateStrings(
-                            concatenateStrings(
-                                concatenateStrings(
-                                    Strings.toHexString(localsStruct[i].consumer), 
-                                    Strings.toString(localsStruct[i].energyConsume)), 
-                                Strings.toString(localsStruct[i].pricePerMonth)), 
-                            Strings.toString(localsStruct[i].timeStamp)),
-                        Strings.toString(localsStruct[i].localId)),
-                    (localsStruct[i].active ? "true" : "false")), 
+        string[] memory args = new string[](1);
+        args[0] = deviceId;
 
-    //     //     Strings.toString(localsStruct[i].contractDeadLine));
-    //     // }
+        FunctionsRequest.Request memory req;
+        req.initializeRequestForInlineJavaScript(source); // Initialize the request with JS code
+        if (args.length > 0) req.setArgs(args); // Set the arguments for the request
 
-    //     string[] memory args = new string[](1);
-
-    //     FunctionsRequest.Request memory req;
-    //     req.initializeRequestForInlineJavaScript(source); // Initialize the request with JS code
-    //     if (args.length > 0) req.setArgs(contracts); // Set the arguments for the request
-
-    //     // Send the request and store the request ID
-    //     lastRequestId = _sendRequest(
-    //         req.encodeCBOR(),
-    //         subscriptionId,
-    //         gasLimit,
-    //         donID
-    //     );
+        // Send the request and store the request ID
+        lastRequestId = _sendRequest(
+              req.encodeCBOR(),
+             subscriptionId,
+             gasLimit,
+             donID
+         );
         requests[lastRequestId] = RequestStatus({
             exists: true,
             fulfilled: false,
@@ -102,8 +79,8 @@ contract BaoFunction is FunctionsClient {
             err: ""
         });
         requestIds.push(lastRequestId);
-        */
-        return bytes32(0x666f6f6261720000000000000000000000000000000000000000000000000000); 
+        
+        return lastRequestId; 
     }
 
 
@@ -125,9 +102,5 @@ contract BaoFunction is FunctionsClient {
         answer = string(response);
 
         emit Response(requestId, answer, lastResponse, lastError);
-    }
-
-    function concatenateStrings(string memory _str1, string memory _str2) internal pure returns (string memory) {
-        return string(abi.encodePacked(_str1, _str2));
     }
 }
